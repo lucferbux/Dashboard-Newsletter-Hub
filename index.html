@@ -258,7 +258,7 @@
                         <div class="metric-description">Feature teams developing independently</div>
                     </div>
                     <div class="metric-card animate-on-scroll">
-                        <div class="metric-value" data-target="14">0</div>
+                        <div class="metric-value" data-target="15">0</div>
                         <div class="metric-suffix">+</div>
                         <div class="metric-label">Federated Modules</div>
                         <div class="metric-description">Modular architecture modules and external integrations</div>
@@ -793,6 +793,15 @@
                             <p>Migrate from DSCI/DSC/OLM reads to Dashboard CR as source of truth, enabling xKS portability. Comprehensive E2E testing for the operator. xKC distribution hardening and MaaS Consumer Portal delivery.</p>
                         </div>
                     </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">RHOAI 3.6 GA</span>
+                            <div class="timeline-date">November 2026 (Delivered)</div>
+                            <h3>MaaS Portal GA &amp; Production Hardening</h3>
+                            <p>MaaS Portal reached GA as a self-service experience; the Dashboard Operator gained full E2E coverage and an inventory-driven cache redesign; model-serving was federated with zero internal imports; and operand NetworkPolicies, TLS-Scanner CI, and Core BFF xKS readiness closed the security and portability gaps. <a href="https://issues.redhat.com/browse/RHAISTRAT-1545" target="_blank">RHAISTRAT-1545</a> / <a href="https://issues.redhat.com/browse/RHOAIENG-83682" target="_blank">RHOAIENG-83682</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -802,7 +811,7 @@
             <div class="container">
                 <div class="release-tabs">
                     <button class="release-tab active" data-release="35">RHOAI 3.5</button>
-                    <button class="release-tab" data-release="36" disabled>RHOAI 3.6</button>
+                    <button class="release-tab" data-release="36">RHOAI 3.6</button>
                 </div>
                 <div class="release-content" data-release="35">
                 <h2 class="section-title animate-on-scroll">RHOAI 3.5: Delivered</h2>
@@ -1014,9 +1023,128 @@
                 </div>
                 </div>
                 <div class="release-content" data-release="36" style="display:none;">
-                    <h2 class="section-title">RHOAI 3.6: In Progress</h2>
-                    <p class="section-subtitle">Content will be added as the release progresses</p>
-                    <p class="release-coming-soon">Core BFF promotion, Data Registry, Notebooks v2, xKS hardening, and MaaS Consumer Portal — coming soon.</p>
+                <h2 class="section-title animate-on-scroll">RHOAI 3.6: Delivered</h2>
+                <p class="section-subtitle animate-on-scroll">From a Tech Preview portal to GA-ready self-service, a fully tested operator, and a federated platform — hardening the modular architecture for production at scale</p>
+
+                <div class="initiatives-grid">
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
+                        <h3>MaaS Portal — GA-Ready</h3>
+                        <p>The <strong>Models as a Service</strong> consumer portal graduated from Tech Preview to a GA-ready, self-service experience: path-based routing on a shared Gateway, full operand manifests, an independently managed DSC submodule, an observability dashboard, governance for administrators, and production branding. Renamed from "MaaS Consumer Portal" to <strong>MaaS Portal</strong>.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">14+ stories delivered</span>
+                            <a href="https://issues.redhat.com/browse/RHAISTRAT-1545" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHAISTRAT-1545</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
+                        <h3>Dashboard Operator E2E Testing</h3>
+                        <p>Comprehensive test coverage for the standalone operator landed across three layers: an <strong>envtest</strong> integration foundation, platform-contract conformance tests, and <strong>real-cluster E2E</strong> running in CI/CD. The operator now ships with a signed-off quality gate — no more untested reconciliation paths.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">4 epics</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-83682" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-83682</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
+                        <h3>Operator Cache Redesign (OOM Fix)</h3>
+                        <p>Re-architected the operator's caching to be <strong>inventory-driven</strong>, resolving the out-of-memory failures that appeared at scale. The operator now stays within predictable memory bounds as the number of managed modules grows.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">Scaling remediation</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-98536" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-98536</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
+                        <h3>model-serving Module Federation</h3>
+                        <p>Federated <strong>model-serving</strong> as a Module Federation remote with <strong>zero <code>@odh-dashboard/internal</code> imports</strong> — shared types and components extracted to independent packages. The template for federating every remaining plugin.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">Zero internal imports</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-79873" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-79873</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
+                        <h3>Operand NetworkPolicies &amp; TLS Compliance</h3>
+                        <p>Shipped <strong>least-privilege NetworkPolicies</strong> for all AI Core Dashboard operands (OCP 5.0 readiness) and added a <strong>TLS-Scanner CI step</strong> to the upstream E2E pipelines — closing the security and compliance gaps ahead of GA.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">OCP 5.0 + TLS</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-93714" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-93714</a>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-95815" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-95815</a>
+                        </div>
+                    </div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered</div>
+                        <h3>Core BFF xKS Readiness</h3>
+                        <p>Hardened the Go Core BFF for <strong>RHAII on non-OpenShift Kubernetes (xKS)</strong> — portal BFF modules, container image, and access-token forwarding for federated authorize entries. The backbone for running the dashboard outside OpenShift.</p>
+                        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: #D1FAE5; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 500;">xKS production readiness</span>
+                            <a href="https://issues.redhat.com/browse/RHOAIENG-79874" target="_blank" style="background: #F3F4F6; color: #6B7280; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; text-decoration: none;">RHOAIENG-79874</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.6 Highlights -->
+                <div style="margin-top: 48px;">
+                    <h3 class="animate-on-scroll" style="font-size: 1.5rem; margin-bottom: 8px; color: #1F2937;">What 3.6 Delivered</h3>
+                    <p class="animate-on-scroll" style="color: #6B7280; margin-bottom: 24px;">Three EA drops into GA — the modular platform moving from "it works" to "it's production-hardened"</p>
+                    <div class="metrics-grid" style="grid-template-columns: repeat(4, 1fr);">
+                        <div class="metric-card animate-on-scroll">
+                            <div class="metric-value" style="font-size: 1.8rem; color: #10B981;">GA</div>
+                            <div class="metric-label" style="font-size: 0.85em; color: #6B7280;">MaaS Portal</div>
+                            <div class="metric-description">Tech Preview → self-service GA</div>
+                        </div>
+                        <div class="metric-card animate-on-scroll">
+                            <div class="metric-value" style="font-size: 1.8rem; color: #10B981;">E2E</div>
+                            <div class="metric-label" style="font-size: 0.85em; color: #6B7280;">Operator Tested</div>
+                            <div class="metric-description">envtest + conformance + real-cluster CI</div>
+                        </div>
+                        <div class="metric-card animate-on-scroll">
+                            <div class="metric-value" style="font-size: 1.8rem; color: #10B981;">0</div>
+                            <div class="metric-label" style="font-size: 0.85em; color: #6B7280;">Internal Imports</div>
+                            <div class="metric-description">model-serving fully federated</div>
+                        </div>
+                        <div class="metric-card animate-on-scroll">
+                            <div class="metric-value" style="font-size: 1.8rem; color: #10B981;">xKS</div>
+                            <div class="metric-label" style="font-size: 0.85em; color: #6B7280;">Core BFF Ready</div>
+                            <div class="metric-description">RHAII on non-OpenShift K8s</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.6 Release Timeline -->
+                <div style="margin-top: 48px;">
+                    <h3 class="animate-on-scroll" style="font-size: 1.5rem; margin-bottom: 8px; color: #1F2937;">Release Timeline</h3>
+                    <div class="timeline" style="margin-top: 24px;">
+                        <div class="timeline-item animate-on-scroll">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-badge">RHOAI 3.6 EA1</span>
+                                <div class="timeline-date">September 23, 2026</div>
+                                <h3>MaaS Portal Foundations</h3>
+                                <p>Consumer portal onboarded as an independently managed DSC submodule with operand manifests, App Picker entry, and the portal Core-BFF image.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item animate-on-scroll">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-badge">RHOAI 3.6 EA2</span>
+                                <div class="timeline-date">October 14, 2026</div>
+                                <h3>Portal Self-Service + Operator E2E</h3>
+                                <p>Path-based routing, logout/sign-in return flow, governance views, and navigation polish land for the portal; the Dashboard Operator gains its envtest, conformance, and real-cluster E2E suites.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item animate-on-scroll">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-badge">RHOAI 3.6 GA</span>
+                                <div class="timeline-date">November 18, 2026</div>
+                                <h3>Production Hardening</h3>
+                                <p>MaaS Portal GA with observability, operator cache redesign (OOM fix), operand NetworkPolicies, TLS-Scanner CI, model-serving federation, and Core BFF xKS readiness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -1033,15 +1161,15 @@
                         <h3>xKS Model Deployment UI</h3>
                         <p>Productize the RHAII Model Deployment UI for non-OpenShift Kubernetes distributions. <a href="https://redhat.atlassian.net/browse/RHAISTRAT-2252" target="_blank">RHAISTRAT-2252</a></p>
                     </div>
-                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
-                        <div class="initiative-status status-progress">In Progress</div>
-                        <h3>MaaS Consumer Portal</h3>
-                        <p>Self-service endpoint access, API key management, and usage visibility for Models as a Service. <a href="https://redhat.atlassian.net/browse/RHAISTRAT-1545" target="_blank">RHAISTRAT-1545</a></p>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered (3.6 GA)</div>
+                        <h3>MaaS Portal</h3>
+                        <p>Self-service endpoint access, API key management, and usage visibility for Models as a Service — shipped GA-ready in 3.6 with path-based routing, an observability dashboard, and governance views. <a href="https://redhat.atlassian.net/browse/RHAISTRAT-1545" target="_blank">RHAISTRAT-1545</a></p>
                     </div>
-                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #8B5CF6;">
-                        <div class="initiative-status status-progress">In Progress</div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered (3.6 GA)</div>
                         <h3>model-serving Federation</h3>
-                        <p>Eliminate 219 <code>@odh-dashboard/internal</code> imports from model-serving — extracting shared types/components to independent packages. Template for federating all remaining plugins. <a href="https://issues.redhat.com/browse/RHOAIENG-79873" target="_blank">RHOAIENG-79873</a></p>
+                        <p>Eliminated the <code>@odh-dashboard/internal</code> imports from model-serving — shared types/components extracted to independent packages and federated as a Module Federation remote. The template for federating all remaining plugins. <a href="https://issues.redhat.com/browse/RHOAIENG-79873" target="_blank">RHOAIENG-79873</a></p>
                     </div>
                     <div class="initiative-card animate-on-scroll">
                         <div class="initiative-status status-planned">Backlog</div>
@@ -1058,10 +1186,10 @@
                         <h3>Core BFF Promotion</h3>
                         <p>Promote Core BFF to primary backend and deprecate Fastify. Final stage of the pipeline. <a href="https://issues.redhat.com/browse/RHOAIENG-83695" target="_blank">RHOAIENG-83695</a></p>
                     </div>
-                    <div class="initiative-card animate-on-scroll">
-                        <div class="initiative-status status-planned">Backlog</div>
+                    <div class="initiative-card animate-on-scroll" style="border-left: 4px solid #6B7280;">
+                        <div class="initiative-status status-completed">Delivered (3.6 GA)</div>
                         <h3>Dashboard Operator E2E Testing</h3>
-                        <p>Comprehensive E2E test coverage for the Dashboard Operator — envtest, controller-runtime patterns, integration tests. <a href="https://issues.redhat.com/browse/RHOAIENG-83682" target="_blank">RHOAIENG-83682</a></p>
+                        <p>Comprehensive E2E test coverage for the Dashboard Operator — envtest foundation, platform-contract conformance, and real-cluster tests running in CI/CD. <a href="https://issues.redhat.com/browse/RHOAIENG-83682" target="_blank">RHOAIENG-83682</a></p>
                     </div>
                     <div class="initiative-card animate-on-scroll">
                         <div class="initiative-status status-planned">Backlog</div>
