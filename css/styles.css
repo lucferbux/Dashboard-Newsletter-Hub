@@ -1671,3 +1671,278 @@ body {
         flex-wrap: wrap;
     }
 }
+
+/* ============================================
+   Architecture Tabs & Multi-Surface Diagrams
+   ============================================ */
+.arch-tabs {
+    display: flex;
+    gap: var(--pf-v6-spacer-sm);
+    justify-content: center;
+    margin-bottom: var(--pf-v6-spacer-xl);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.arch-tab {
+    padding: 10px 24px;
+    font-size: var(--pf-v6-font-size-md);
+    font-weight: 600;
+    font-family: var(--pf-v6-font-family-heading);
+    color: var(--color-text-subtle);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: var(--pf-v6-transition);
+    margin-bottom: -2px;
+}
+
+.arch-tab:hover {
+    color: var(--color-primary);
+}
+
+.arch-tab.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.arch-intro {
+    max-width: 760px;
+    margin: 0 auto var(--pf-v6-spacer-lg);
+    text-align: center;
+    color: var(--color-text-subtle);
+    font-size: var(--pf-v6-font-size-md);
+    line-height: 1.6;
+}
+
+.arch-subhead {
+    text-align: center;
+    font-family: var(--pf-v6-font-family-heading);
+    font-size: var(--pf-v6-font-size-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin: var(--pf-v6-spacer-xl) 0 var(--pf-v6-spacer-md);
+}
+
+.arch-shard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--pf-v6-spacer-md);
+    max-width: 800px;
+    margin: 0 auto var(--pf-v6-spacer-md);
+}
+
+.arch-shard-card {
+    padding: var(--pf-v6-spacer-md);
+    background: var(--color-surface-raised);
+    border-radius: var(--pf-v6-border-radius-lg);
+    border-left: 4px solid var(--color-primary);
+    transition: var(--pf-v6-transition);
+}
+
+.arch-shard-card:hover {
+    box-shadow: var(--pf-v6-box-shadow-md);
+}
+
+.arch-shard-card .arch-label {
+    text-align: left;
+    color: var(--color-text);
+    margin-bottom: var(--pf-v6-spacer-xs);
+}
+
+.arch-shard-card p {
+    color: var(--color-text-subtle);
+    font-size: var(--pf-v6-font-size-sm);
+    line-height: 1.5;
+}
+
+.arch-jira-links {
+    display: flex;
+    gap: var(--pf-v6-spacer-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--pf-v6-spacer-md);
+}
+
+.arch-jira-links a {
+    background: var(--color-surface-raised);
+    color: var(--color-primary);
+    padding: 4px 12px;
+    border-radius: var(--pf-v6-border-radius-sm);
+    font-size: var(--pf-v6-font-size-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--pf-v6-transition);
+}
+
+.arch-jira-links a:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* ============================================
+   Timeline — Collapsible Phases
+   ============================================ */
+.timeline-phase {
+    position: relative;
+    padding-bottom: var(--pf-v6-spacer-md);
+}
+
+.timeline-marker-phase {
+    width: 18px;
+    height: 18px;
+    left: calc(-1 * var(--pf-v6-spacer-xl) - 1px);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #004D99 100%);
+    box-shadow: 0 0 0 3px var(--color-surface);
+    z-index: 1;
+}
+
+.timeline-phase-toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--color-surface-raised);
+    border: none;
+    border-radius: var(--pf-v6-border-radius-lg);
+    padding: var(--pf-v6-spacer-md) var(--pf-v6-spacer-xl) var(--pf-v6-spacer-md) var(--pf-v6-spacer-md);
+    cursor: pointer;
+    position: relative;
+    transition: var(--pf-v6-transition);
+    font-family: var(--pf-v6-font-family-body);
+}
+
+.timeline-phase-toggle:hover {
+    box-shadow: var(--pf-v6-box-shadow-md);
+}
+
+.section-alt .timeline-phase-toggle {
+    background: white;
+}
+
+.timeline-phase-toggle h3 {
+    font-family: var(--pf-v6-font-family-heading);
+    font-size: var(--pf-v6-font-size-md);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--pf-v6-spacer-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--pf-v6-spacer-sm);
+    flex-wrap: wrap;
+}
+
+.timeline-phase-count {
+    font-size: var(--pf-v6-font-size-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    background: rgba(0, 102, 204, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--pf-v6-border-radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.timeline-phase-toggle p {
+    color: var(--color-text-subtle);
+    font-size: var(--pf-v6-font-size-sm);
+    line-height: 1.5;
+}
+
+.timeline-phase-toggle::after {
+    content: '\25BE';
+    position: absolute;
+    right: var(--pf-v6-spacer-md);
+    top: var(--pf-v6-spacer-md);
+    color: var(--color-primary);
+    font-size: var(--pf-v6-font-size-md);
+    transition: transform 0.2s ease;
+}
+
+.timeline-phase-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.timeline-phase-items {
+    display: none;
+    margin-top: var(--pf-v6-spacer-md);
+}
+
+.timeline-phase-items.open {
+    display: block;
+}
+
+/* ============================================
+   Distribution Matrix
+   ============================================ */
+.dist-matrix {
+    overflow-x: auto;
+    border-radius: var(--pf-v6-border-radius-lg);
+    background: var(--color-surface-raised);
+}
+
+.section-alt .dist-matrix {
+    background: white;
+}
+
+.dist-matrix table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+    font-size: var(--pf-v6-font-size-sm);
+}
+
+.dist-matrix th,
+.dist-matrix td {
+    text-align: left;
+    padding: var(--pf-v6-spacer-sm) var(--pf-v6-spacer-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dist-matrix thead th {
+    font-family: var(--pf-v6-font-family-heading);
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--pf-v6-color-bg-secondary-hover);
+    white-space: nowrap;
+}
+
+.dist-matrix tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.dist-matrix tbody tr:hover {
+    background: rgba(0, 102, 204, 0.04);
+}
+
+.dist-matrix td {
+    color: var(--color-text-subtle);
+}
+
+.dist-matrix td strong {
+    color: var(--color-text);
+}
+
+.dist-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.dist-ga {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.dist-tp {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+@media (max-width: 480px) {
+    .arch-tabs {
+        flex-wrap: wrap;
+    }
+}

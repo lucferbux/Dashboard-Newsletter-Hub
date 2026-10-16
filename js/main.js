@@ -380,10 +380,69 @@
                 tab.classList.add('active');
 
                 contents.forEach(function(c) {
-                    c.style.display = c.getAttribute('data-release') === release ? 'block' : 'none';
+                    var show = c.getAttribute('data-release') === release;
+                    c.style.display = show ? 'block' : 'none';
+                    if (show) {
+                        c.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                            el.classList.add('visible');
+                        });
+                    }
                 });
             });
         });
+    }
+
+    // ============================================
+    // Architecture Tab Switching
+    // ============================================
+    function initArchTabs() {
+        const tabs = document.querySelectorAll('.arch-tab');
+        const panels = document.querySelectorAll('.arch-panel');
+
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var key = tab.getAttribute('data-arch');
+
+                tabs.forEach(function(t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+
+                panels.forEach(function(p) {
+                    var show = p.getAttribute('data-arch') === key;
+                    p.style.display = show ? 'block' : 'none';
+                    if (show) {
+                        p.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                            el.classList.add('visible');
+                        });
+                    }
+                });
+            });
+        });
+    }
+
+    // ============================================
+    // Timeline Phase Collapse / Expand
+    // ============================================
+    function initTimelinePhases() {
+        const toggles = document.querySelectorAll('.timeline-phase-toggle');
+
+        function revealItems(items) {
+            items.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                el.classList.add('visible');
+            });
+        }
+
+        toggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                var items = toggle.parentElement.querySelector('.timeline-phase-items');
+                if (!items) return;
+                var isOpen = items.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                if (isOpen) revealItems(items);
+            });
+        });
+
+        // Default-open phases should show their items immediately
+        document.querySelectorAll('.timeline-phase-items.open').forEach(revealItems);
     }
 
     function initAll() {
@@ -396,6 +455,8 @@
         initLazyLoading();
         initSidebarToggle();
         initReleaseTabs();
+        initArchTabs();
+        initTimelinePhases();
 
         // Log initialization
         console.log('Dashboard Platform Overview initialized');
