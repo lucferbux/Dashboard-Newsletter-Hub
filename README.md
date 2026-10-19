@@ -3,7 +3,7 @@
 The public overview of the **RHOAI Dashboard Platform Team (Pewter)**: what we own, what we enable, how it is built,
 what each release delivered and what we are exploring next. We use it to present our progress to other organizations.
 
-**Live:** https://lucferbux.github.io/Monarch-Overview/ (GitHub Pages, `main` branch, repo root).
+**Live:** https://lucferbux.github.io/Openshift-AI-Platform-Overview/ (GitHub Pages, `main` branch, repo root).
 
 It is built with **PatternFly 6** — the same design system, Red Hat UI icons and page layout as the Red Hat OpenShift AI
 dashboard — and has three interactive 3D dioramas (three.js). There is **no build step**: plain HTML, CSS and ES modules.
