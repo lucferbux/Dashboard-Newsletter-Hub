@@ -1,6 +1,7 @@
 // Next-release exploration. Sources: Jira (RHAISTRAT target version 3.7, RHOAIENG Pewter initiatives) and the
 // "Red Hat AI – 3.7 UI/UX" planning doc. Nothing here is committed until it gets a 3.7 Fix Version.
-// owner: 'pewter' = the Dashboard Platform Team leads it · 'shared' = Pewter enables it for other teams.
+// owner: 'pewter' = the Dashboard Platform Team leads it · 'oversight' = we planned it and oversee it, another team builds it
+//        · 'shared' = Pewter enables it for other teams.
 export default {
   release: '3.7',
   disclaimer: 'Exploration for RHOAI 3.7 — themes and Jira candidates, not commitments. Items move to the release explorer once they carry a 3.7 Fix Version.',
@@ -74,8 +75,8 @@ export default {
       title: 'Unified project selector',
       icon: 'folder',
       tone: 'green',
-      owner: 'pewter',
-      summary: 'One project selector with OpenShift console parity across every dashboard surface — including xKS and the MaaS portal.',
+      owner: 'oversight',
+      summary: 'One project selector with OpenShift console parity across every dashboard surface — including xKS and the MaaS portal. We planned it and defined the implementation; another team builds it with us as overseers.',
       jira: ['RHAISTRAT-2191'],
       items: [
         { title: 'Implementation defined (spike done)', status: 'delivered', jira: ['RHOAIENG-95235'] },

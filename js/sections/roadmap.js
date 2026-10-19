@@ -1,7 +1,7 @@
 import roadmap from '../data/roadmap.js';
 import { html, card, iconTile, sectionHeader, statusLabel, label, jiraLinks, icon } from '../components/ui.js';
 
-const OWNER = { pewter: ['purple', 'Led by our team'], shared: ['blue', 'Enabled by our platform'] };
+const OWNER = { pewter: ['purple', 'Led by our team'], oversight: ['teal', 'Planned & overseen by us'], shared: ['blue', 'Enabled by our platform'] };
 
 export default {
   id: 'roadmap',

@@ -72,7 +72,8 @@ New categories need a label and a colour in `js/sections/modules.js` (CATEGORY, 
 `[{ key /* Jira key */, title, status, release?: '3.6'|'3.7', area, description, epics?: [{ key, title, status }] }]`
 
 ## roadmap.js — next release exploration (3.7+)
-`{ release: '3.7', disclaimer, themes: [{ id, title, icon, tone, owner: 'pewter'|'shared', summary, jira?: [] /* parent */, items: [{ title, status, jira?: [], description? }] }] }`
+`{ release: '3.7', disclaimer, themes: [{ id, title, icon, tone, owner: 'pewter'|'oversight'|'shared', summary, jira?: [] /* parent */, items: [{ title, status, jira?: [], description? }] }] }`
+`owner`: `pewter` = we lead and build it · `oversight` = we planned it and oversee it, another team builds it · `shared` = another team owns it, our platform enables it.
 The release explorer shows these themes as a final "exploring" tab; when items get a Fix Version, move them into `releases.js`.
 
 ## value.js — Strategic value
