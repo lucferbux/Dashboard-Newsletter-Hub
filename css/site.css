@@ -23,6 +23,9 @@
   --mo-max: 1240px;
 }
 
+/* PatternFly components set display (flex/grid), which beats the [hidden] attribute — filters rely on it. */
+[hidden] { display: none !important; }
+
 .mo-icon { width: 1em; height: 1em; flex: none; vertical-align: -0.125em; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

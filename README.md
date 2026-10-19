@@ -72,6 +72,7 @@ the page locally in light, dark and Felt.
 - PatternFly first: use `pf-v6-c-*` components through `js/components/ui.js`; add custom CSS only when PatternFly has
   no component for it, with the `mo-` prefix and PatternFly tokens only. That keeps light, dark and Felt themes working.
 - Icons are Red Hat UI icons (what the RHOAI nav uses). No emoji, no letter avatars.
+- Hide/show with the `hidden` attribute (a global `[hidden]` rule beats PatternFly's `display`).
 - Status always through `statusLabel(status)`: `delivered`, `live`, `in-progress`, `at-risk`, `planned`, `exploring`,
   `coming-soon`.
 - Jira references are keys in `jira: []`; they render as links to `redhat.atlassian.net`.
