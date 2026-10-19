@@ -107,7 +107,7 @@ export default [
     name: 'MCP Catalog',
     icon: 'mcp-server',
     category: 'agents',
-    status: 'live', // TODO verify: listed as a RHOAI module, but "Coming Soon" upstream in Kubeflow
+    status: 'live',
     bff: 'go',
     bffHost: 'model-registry',
     description: 'MCP server discovery and management within the <strong>model-registry BFF</strong>. Browse, register, and connect to MCP servers for tool integration with AI models. Part of the model-registry module alongside Model Registry and AI Catalog.',
@@ -117,9 +117,10 @@ export default [
     name: 'Data Registry',
     icon: 'data',
     category: 'data',
-    status: 'in-progress', // TODO verify: described as a "new Go BFF module", no release given
+    status: 'in-progress',
+    release: '3.6',
     bff: 'go',
-    description: 'Data asset registration, discovery, and management via the <strong>Iceberg REST Catalog</strong> protocol. Browse, search, and register tables, volumes, and collections within namespaces. New Go BFF module.',
+    description: 'Data asset registration, discovery, and management via the <strong>Iceberg REST Catalog</strong> protocol. Browse, search, and register tables, volumes, and collections within namespaces. New Go BFF module, shipping in RHOAI 3.6.',
     jira: ['RHAISTRAT-2369'],
   },
   {
@@ -127,7 +128,7 @@ export default [
     name: 'Notebooks v2',
     icon: 'develop-and-train',
     category: 'workbenches',
-    status: 'coming-soon',
+    status: 'in-progress',
     bff: 'none', // TODO verify: the page does not say whether Notebooks v2 has a BFF
     release: '3.6',
     description: 'Next-generation notebook environment as a <strong>federated module</strong>. Upstream Kubeflow contribution, coming in RHOAI 3.6 with full modular architecture integration and independent pod deployment.',

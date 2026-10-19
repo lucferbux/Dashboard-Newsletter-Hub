@@ -29,8 +29,8 @@ export default {
     {
       name: 'MCP Catalog',
       icon: 'mcp-server',
-      status: 'coming-soon',
-      description: 'MCP server integration for AI models, enabling standardized agent interactions. In development.',
+      status: 'live',
+      description: 'MCP server discovery and integration for AI models, enabling standardized agent interactions.',
     },
     {
       name: 'Notebooks',

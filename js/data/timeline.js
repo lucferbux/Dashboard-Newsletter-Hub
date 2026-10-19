@@ -75,8 +75,8 @@ export default [
     open: true,
     summary: 'MaaS Portal GA, a fully tested operator, model-serving federation, and NetworkPolicy/TLS compliance harden the platform for scale.',
     milestones: [
-      // TODO verify: marked "Delivered", but 3.6 GA is 18 Nov 2026.
-      { date: 'November 2026', status: 'delivered', title: 'MaaS Portal GA &amp; Production Hardening', tag: 'RHOAI 3.6 GA', description: 'MaaS Portal reached GA as a self-service experience; the Dashboard Operator gained full E2E coverage and an inventory-driven cache redesign; model-serving was federated with zero internal imports; and operand NetworkPolicies, TLS-Scanner CI, and Core BFF xKS readiness closed the security and portability gaps.', jira: ['RHAISTRAT-1545', 'RHOAIENG-83682'] },
+      { date: 'October 2026', status: 'delivered', title: 'RHOAI 3.6 code freeze', tag: 'RHOAI 3.6', description: 'All 3.6 platform work landed: MaaS Portal self-service, Dashboard Operator E2E, inventory-driven cache, model-serving federation, NetworkPolicies and TLS-Scanner CI, Core BFF xKS readiness. Data Registry and Notebooks 2.0 ship as new modules.' },
+      { date: 'November 2026', status: 'in-progress', title: 'MaaS Portal GA &amp; Production Hardening', tag: 'RHOAI 3.6 GA · 18 Nov', description: 'MaaS Portal reaches GA as a self-service experience, with a fully tested operator and a hardened, federated platform. 3.7 planning runs in parallel.', jira: ['RHAISTRAT-1545', 'RHOAIENG-83682'] },
     ],
   },
 ];
