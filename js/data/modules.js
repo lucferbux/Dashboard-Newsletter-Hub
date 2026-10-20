@@ -124,6 +124,17 @@ export default [
     jira: ['RHAISTRAT-2369'],
   },
   {
+    id: 'data-connect-hub',
+    name: 'Data Connect Hub',
+    icon: 'connected',
+    category: 'data',
+    status: 'in-progress',
+    release: '3.6',
+    bff: 'go',
+    description: 'Federated module for connecting data sources to RHOAI, with its own Go BFF and independent pod. Onboarded in RHOAI 3.6 with the standard <code>mod-arch</code> starter.',
+    repo: 'https://github.com/opendatahub-io/odh-dashboard/tree/main/packages/data-connect-hub',
+  },
+  {
     id: 'notebooks-v2',
     name: 'Notebooks v2',
     icon: 'develop-and-train',

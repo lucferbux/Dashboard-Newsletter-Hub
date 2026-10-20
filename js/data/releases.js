@@ -114,12 +114,12 @@ export default [
     ],
     highlights: [
       {
-        title: 'Community plugins, first release',
+        title: 'Community plugins, a first step',
         area: 'modular-architecture',
         status: 'delivered',
         icon: 'puzzle-piece',
-        description: 'Partners and the community can now add pages to the dashboard. A plugin is registered in one ConfigMap entry; the Dashboard Operator validates each entry on its own, merges it into <code>federation-config</code> next to the built-in modules and serves it under <code>/community-plugins/&lt;name&gt;/</code>. A bad entry is skipped without affecting anything else.',
-        tags: ['Registration contract'],
+        description: 'A first step towards letting partners and the community add pages to the dashboard: a minimal registration contract, an early foundation rather than a supported plugin ecosystem. A plugin is registered in one ConfigMap entry; the Dashboard Operator validates each entry on its own, merges it into <code>federation-config</code> next to the built-in modules and serves it under <code>/community-plugins/&lt;name&gt;/</code>. A bad entry is skipped without affecting anything else.',
+        tags: ['Early foundation'],
         jira: ['RHAISTRAT-2430'],
       },
       {
