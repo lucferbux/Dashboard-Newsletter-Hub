@@ -114,6 +114,24 @@ export default [
     ],
     highlights: [
       {
+        title: 'Community plugins, first release',
+        area: 'modular-architecture',
+        status: 'delivered',
+        icon: 'puzzle-piece',
+        description: 'Partners and the community can now add pages to the dashboard. A plugin is registered in one ConfigMap entry; the Dashboard Operator validates each entry on its own, merges it into <code>federation-config</code> next to the built-in modules and serves it under <code>/community-plugins/&lt;name&gt;/</code>. A bad entry is skipped without affecting anything else.',
+        tags: ['Registration contract'],
+        jira: ['RHAISTRAT-2430'],
+      },
+      {
+        title: 'Ready for OpenShift 5',
+        area: 'platform',
+        status: 'delivered',
+        icon: 'secured',
+        description: 'OpenShift 5 changes four defaults and each was a release gate for 3.6. The dashboard now ships <strong>least-privilege network policies for every operand</strong> (default-deny), follows the <strong>cluster TLS profile</strong> in the operator and all ten BFFs with a TLS scanner in CI, keeps sign-in working under <strong>external OIDC</strong>, and detects operators through both OLM v0 and <strong>OLM v1</strong>.',
+        tags: ['4 OCP 5 gates cleared'],
+        jira: ['RHOAIENG-93714', 'RHOAIENG-75339', 'RHOAIENG-95173', 'RHOAIENG-93083'],
+      },
+      {
         title: 'MaaS Portal — GA-Ready',
         area: 'distributions',
         status: 'delivered',

@@ -20,7 +20,7 @@ export default {
         { title: 'Reconcile correctness and status fidelity', status: 'planned', jira: ['RHOAIENG-98549'] },
         { title: 'Deploy pipeline and upgrade hygiene', status: 'planned', jira: ['RHOAIENG-98550'] },
         { title: 'Enterprise readiness and high availability', status: 'planned', jira: ['RHOAIENG-98551'] },
-        { title: 'Inventory-driven cache (OOM fix) lands in 3.6 GA as the base', status: 'in-progress', jira: ['RHOAIENG-98537'] },
+        { title: 'Stage one, shipped in 3.6: inventory-driven cache (OOM fix)', status: 'delivered', jira: ['RHOAIENG-98537'] },
       ],
     },
     {
@@ -32,7 +32,8 @@ export default {
       summary: 'Open the modular architecture to modules built outside the product: the same Module Federation contract, discovered and enabled at runtime, so partners and the community can extend RHOAI without forking it.',
       jira: ['RHAISTRAT-2430'],
       items: [
-        { title: 'Support community plugins in the RHOAI UI', status: 'exploring', jira: ['RHAISTRAT-2430'] },
+        { title: 'Registration contract: operator validates and federates plugins (shipped in 3.6)', status: 'delivered', jira: ['RHAISTRAT-2430'] },
+        { title: 'Full community plugin experience in the RHOAI UI', status: 'exploring', jira: ['RHAISTRAT-2430'] },
         { title: 'Stable module SDK for core-to-package data sharing', status: 'planned', jira: ['RHOAIENG-57792'] },
         { title: 'Quickstart launcher and catalog', status: 'exploring', jira: ['RHAISTRAT-1991'] },
       ],
