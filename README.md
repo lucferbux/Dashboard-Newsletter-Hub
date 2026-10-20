@@ -6,7 +6,8 @@ what each release delivered and what we are exploring next. We use it to present
 **Live:** https://lucferbux.github.io/Openshift-AI-Platform-Overview/ (GitHub Pages, `main` branch, repo root).
 
 It is built with **PatternFly 6** — the same design system, Red Hat UI icons and page layout as the Red Hat OpenShift AI
-dashboard — and has three interactive 3D dioramas (three.js). There is **no build step**: plain HTML, CSS and ES modules.
+dashboard — with three interactive 2D visualizations: the isometric platform stack, a Module Federation simulator and
+the distributions fan-out. There is **no build step**: plain HTML, CSS and ES modules.
 
 ## Run it locally
 
@@ -19,7 +20,7 @@ ES modules need a server; opening `index.html` from disk will not work.
 ## How it is organized
 
 ```
-index.html              Page shell only: PatternFly CSS (pinned CDN), import map for three.js, empty masthead/sidebar/main.
+index.html              Page shell only: PatternFly CSS (pinned CDN), empty masthead/sidebar/main.
 css/site.css            Site layer on top of PatternFly. Uses only PatternFly tokens (--pf-t--*), prefix mo-.
 js/app.js               Renders masthead, grouped sidebar nav, every section and the footer; theme switch, scroll-spy, reveals.
 js/data/*.js            ALL CONTENT. One file per topic. Schema: js/data/SCHEMA.md.
@@ -27,7 +28,7 @@ js/sections/*.js        One renderer per section: { id, nav: { group, label, ico
 js/sections/index.js    The page order. Add or reorder sections here.
 js/components/ui.js     PatternFly building blocks as HTML helpers: card, label, statusLabel, tabs, progress, stepper, …
 js/icons.js             GENERATED Red Hat UI icon paths. Edit tools/icons.txt, then `node tools/build-icons.mjs`.
-js/scenes/*.js          3D dioramas. kit.js = shared three.js helpers; mount.js = lazy loading + theme rebuilds.
+js/viz/*.js             Interactive visualizations (SVG/HTML, themed by CSS): stack.js, federation.js, fanout.js.
 tools/                  build-icons.mjs + icons.txt.
 assets/                 favicon.
 ```
@@ -36,14 +37,14 @@ assets/                 favicon.
 
 | Nav group | Section (`id`) | Data | What it shows |
 |---|---|---|---|
-| Overview | `hero` | `site.js` | Banner, 3D platform stack (our layer highlighted), headline stats |
+| Overview | `hero` | `site.js` | Title, interactive isometric stack (`site.stack`, our layer in blue), headline stats |
 | | `about` | `areas.js` | The 7 ownership areas |
 | | `metrics` | `metrics.js` | Animated impact metrics and pills |
 | What we enable | `modules` | `modules.js` | Module catalog with filters, like RHOAI's model catalog |
 | | `integrations` | `integrations.js` | Third-party integrations (Perses, MLflow) |
 | | `kubeflow` | `kubeflow.js` | Upstream contributions and contributors |
-| How it is built | `architecture` | `architecture.js` | Tabs per surface (RHOAI / MaaS / xKS) + 3D Module Federation |
-| | `distributions` | `distributions.js` | 3D "one codebase, three products" + the distribution matrix |
+| How it is built | `architecture` | `architecture.js` + `modules.js` | Module Federation simulator (switch modules, watch nav + federation-config), then tabs per surface |
+| | `distributions` | `distributions.js` | Interactive fan-out (one codebase → products) + the full matrix |
 | Releases | `releases` | `releases.js` + `roadmap.js` | Release explorer: one tab per release, stepper EA1→EA2→GA, highlights, before/after |
 | | `timeline` | `timeline.js` | Our journey: phases with expandable milestones |
 | What is next | `roadmap` | `roadmap.js` | Next-release exploration by theme, with Jira candidates |
@@ -64,13 +65,22 @@ the page locally in light, dark and Felt.
   run `node tools/build-icons.mjs`, commit `js/icons.js`.
 - **New section**: create `js/sections/<id>.js`, register it in `js/sections/index.js`, add its data file and document
   it in `js/data/SCHEMA.md` and in the table above.
-- **New 3D diorama**: create `js/scenes/<name>.js` (default export `(el) => stage`, built with `kit.js`), register it in
-  `js/scenes/mount.js`, and place `<div class="mo-diorama" data-scene="<name>"></div>` in a section.
+- **New visualization**: add `js/viz/<name>.js` exporting a render function (returns HTML/SVG) and a `mount…(root)`
+  function for interactivity; style it with classes in `css/site.css` using PatternFly tokens, so it themes itself.
+  Prefer a clear interactive 2D picture over 3D: the site used three.js once and it cost ~600 KB while explaining less.
 
 ## Design rules
 
-- PatternFly first: use `pf-v6-c-*` components through `js/components/ui.js`; add custom CSS only when PatternFly has
-  no component for it, with the `mo-` prefix and PatternFly tokens only. That keeps light, dark and Felt themes working.
+- **PatternFly first**: use `pf-v6-c-*` components through `js/components/ui.js`; add custom CSS only when PatternFly
+  has no component for it, with the `mo-` prefix and PatternFly tokens only. That keeps light, dark and Felt working.
+- **One accent**: PatternFly blue marks what matters (eyebrows, the stat bar, links, our layer, the active path).
+  Status colours live only inside PatternFly labels. Never colour-code sections or cards; never add coloured card rims.
+- **Bento tiles are PatternFly secondary cards** (`card({ secondary: true })`): filled, no border. Icons sit in the
+  neutral chip from `iconTile()`.
+- **Sections open with** `sectionHeader({ eyebrow, title, description })`: a short eyebrow, a title that is a sentence
+  ending in a period, one paragraph.
+- **Motion explains, it doesn't decorate**: fade-up reveals with a small stagger (`mo-reveal` + `--i`), lines that
+  draw, numbers that count (`data-count`). Everything respects `prefers-reduced-motion`.
 - Icons are Red Hat UI icons (what the RHOAI nav uses). No emoji, no letter avatars.
 - Hide/show with the `hidden` attribute (a global `[hidden]` rule beats PatternFly's `display`).
 - Status always through `statusLabel(status)`: `delivered`, `live`, `in-progress`, `at-risk`, `planned`, `exploring`,

@@ -3,20 +3,27 @@ export default {
   short: 'Pewter',
   description: 'Dashboard Platform Team - Building the Foundation for Red Hat OpenShift AI',
   hero: {
-    eyebrow: 'Dashboard Enabling Team',
-    title: 'Building the Foundation for RHOAI',
-    highlight: 'Foundation',
-    subtitle: 'The platform team powering RHOAI Dashboard — owning Modular Architecture, the Dashboard Operator, Distributions, Core BFF, Manifests, Frontend &amp; Platform Support, and Onboarding. Enabling 10+ teams to ship independently.',
+    eyebrow: 'Dashboard Platform · Red Hat OpenShift AI',
+    title: 'The platform behind the RHOAI dashboard.',
+    highlight: 'platform',
+    subtitle: 'We own the architecture, runtime and tooling the RHOAI dashboard is built on: the modular architecture, the Dashboard Operator, the Core BFF, distributions, manifests and onboarding. More than ten teams ship their features on it.',
     ctas: [
-      { label: 'See Our Impact', href: '#metrics', variant: 'primary' },
+      { label: 'What we shipped in 3.6', href: '#releases', variant: 'primary' },
       { label: 'View on GitHub', href: 'https://github.com/opendatahub-io/odh-dashboard', variant: 'secondary', icon: 'github' },
     ],
   },
+  // The hero's isometric stack, bottom → top. `ours` marks our layer (drawn in blue).
+  stack: [
+    { id: 'openshift', name: 'OpenShift', text: 'The substrate. Operators install through OLM, traffic flows through the Gateway API, and OAuth or OIDC plus RBAC decide who can do what.' },
+    { id: 'platform', name: 'RHOAI platform', text: 'The RHOAI operator reconciles every component from the DataScienceCluster, and one platform gateway authenticates every request.' },
+    { id: 'components', name: 'Components', text: 'Serving, Models-as-a-Service, model registry, pipelines, workbenches, evaluation and training, each owned by its feature team.' },
+    { id: 'dashboard', name: 'Dashboard platform', ours: true, text: 'Our layer. The modular host that loads every team\'s module at runtime, the Go BFFs behind them and the operator that deploys them, so more than ten teams ship into one console.' },
+    { id: 'distributions', name: 'Distributions', text: 'The same code, packaged three ways: the full RHOAI dashboard, the MaaS Portal and RHAII on any Kubernetes.' },
+  ],
   stats: [
-    { value: '7', label: 'Ownership Areas' },
-    { value: '10+', label: 'Teams Enabled' },
-    // TODO verify: the hero said 14+ federated modules; the metrics section says 15+.
-    { value: '15+', label: 'Federated Modules' },
+    { value: '7', label: 'Areas we own' },
+    { value: '10+', label: 'Teams building on it' },
+    { value: '14', label: 'Feature modules' },
     { value: '5', label: 'Engineers' },
   ],
   // Section headings and subtitles as they appear on the page.

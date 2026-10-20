@@ -37,6 +37,16 @@ export default [
     repo: 'https://github.com/kubeflow/model-registry',
   },
   {
+    id: 'model-serving',
+    name: 'Model serving',
+    icon: 'module',
+    category: 'model-lifecycle',
+    status: 'live',
+    release: '3.6',
+    description: 'Deploy and manage models from the dashboard. In 3.6 it became a Module Federation remote with <strong>zero</strong> imports from dashboard internals — the template for federating every remaining feature.',
+    jira: ['RHOAIENG-79873'],
+  },
+  {
     id: 'ai-catalog',
     name: 'AI Catalog',
     icon: 'catalog',
@@ -65,6 +75,7 @@ export default [
     category: 'automl',
     status: 'live',
     bff: 'go',
+    dependsOn: ['gen-ai'],   // the operator's dependency pass enables GenAI Studio with AutoRAG
     port: 8743,
     release: '3.4',
     description: 'Automated RAG optimization using the <strong>ai4rag engine</strong>. Orchestrates experiments through Kubeflow Pipelines, evaluates configurations with quality metrics, and generates deployable RAG Patterns with Go BFF.',

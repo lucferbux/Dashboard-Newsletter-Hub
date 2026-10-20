@@ -78,7 +78,7 @@ toggle.addEventListener('click', () => setNav(!sidebar.classList.contains('pf-m-
 sidebar.addEventListener('click', (e) => { if (e.target.closest('a') && mobile()) setNav(false); });
 
 /* ---------- Main: one PatternFly page section per data section, plus the footer ---------- */
-$('#main').innerHTML = sections.map((s, i) => html`<section class="pf-v6-c-page__main-section mo-section ${i % 2 && i ? 'pf-m-secondary' : ''}" id="${s.id}" aria-label="${s.nav.label}">
+$('#main').innerHTML = sections.map((s) => html`<section class="pf-v6-c-page__main-section mo-section" id="${s.id}" aria-label="${s.nav.label}">
     <div class="pf-v6-c-page__main-body"><div class="mo-wrap">${s.render()}</div></div></section>`).join('') + html`
   <section class="pf-v6-c-page__main-section mo-section"><div class="pf-v6-c-page__main-body"><div class="mo-wrap mo-footer">
     <div class="mo-brand"><span class="mo-brand__mark">${icon('cubes')}</span><span class="mo-brand__text"><span class="mo-brand__product">${site.team}</span><span class="mo-brand__team">${site.footerNote ?? 'Red Hat OpenShift AI'}</span></span></div>
@@ -96,10 +96,22 @@ const spy = new IntersectionObserver((entries) => {
 }, { rootMargin: '-35% 0px -60% 0px' });
 sections.forEach((s) => spy.observe($('#' + s.id)));
 
+/* ---------- Count numbers up the first time they are seen ---------- */
+function countUp(scope) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  scope.querySelectorAll('[data-count]:not([data-counted])').forEach((n) => {
+    n.dataset.counted = '1';
+    const to = Number(n.dataset.count);
+    const t0 = performance.now();
+    const step = (t) => { const k = Math.min(1, (t - t0) / 1200); n.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+}
+
 /* ---------- Reveal on scroll (progressive: content is visible if this never runs) ---------- */
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const reveals = document.querySelectorAll('.mo-reveal');
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('mo-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -5% 0px' });
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('mo-in'); countUp(e.target); io.unobserve(e.target); } }), { rootMargin: '0px 0px -5% 0px' });
   reveals.forEach((r) => {
     if (r.getBoundingClientRect().top < innerHeight) r.classList.add('mo-in');
     io.observe(r);

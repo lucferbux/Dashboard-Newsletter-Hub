@@ -1,8 +1,9 @@
 import arch from '../data/architecture.js';
 import { html, card, sectionHeader, tabs, mountTabs, label, descriptionList, iconTile, jiraLinks } from '../components/ui.js';
-import { mountScene } from '../scenes/mount.js';
+import modules from '../data/modules.js';
+import { federation, mountFederation } from '../viz/federation.js';
 
-const OWNER = { pewter: ['purple', 'Our team'], platform: ['orange', 'Platform'], components: ['blue', 'Feature teams'], openshift: ['red', 'OpenShift'], future: ['teal', 'Next'] };
+const OWNER = { pewter: ['blue', 'Our team'], platform: ['grey', 'Platform'], components: ['grey', 'Feature teams'], openshift: ['grey', 'OpenShift'], future: ['grey', 'Next'] };
 
 function layerList(list, containers = []) {
   const ic = { pod: 'container', container: 'container', deployment: 'application', service: 'network', cr: 'template' };
@@ -13,7 +14,7 @@ function layerList(list, containers = []) {
       <div><div class="mo-layer__name">${l.name}${who ? label(who, { compact: true, color: tone }) : ''}</div>${l.note ? html`<div class="mo-card-desc">${l.note}</div>` : ''}</div>
       <div>
         <div class="mo-layer__items">${(l.items ?? []).map((i, k) => html`<span title="${(l.itemNotes?.[k] ?? l.itemNotes?.[i] ?? '').replace(/"/g, '&quot;')}">${label(i, { compact: true })}</span>`)}</div>
-        ${inside.length ? html`<div class="mo-grid mo-grid--2" style="margin-top:${l.items?.length ? '10px' : '0'};gap:8px">${inside.map((c) => html`<div class="mo-row" style="flex-wrap:nowrap;align-items:flex-start">${iconTile(ic[c.kind] ?? 'container', { tone, size: 'sm' })}<div><strong>${c.name}</strong>${c.port ? html` <span class="mo-muted" style="font-size:12px">:${c.port}</span>` : ''}<div class="mo-card-desc">${c.description ?? ''}</div></div></div>`)}</div>` : ''}
+        ${inside.length ? html`<div class="mo-grid mo-grid--2" style="margin-top:${l.items?.length ? '10px' : '0'};gap:8px">${inside.map((c) => html`<div class="mo-row" style="flex-wrap:nowrap;align-items:flex-start">${iconTile(ic[c.kind] ?? 'container', { size: 'sm' })}<div><strong>${c.name}</strong>${c.port ? html` <span class="mo-muted" style="font-size:12px">:${c.port}</span>` : ''}<div class="mo-card-desc">${c.description ?? ''}</div></div></div>`)}</div>` : ''}
       </div>
     </div>`;
   })}</div>`;
@@ -22,7 +23,7 @@ function layerList(list, containers = []) {
 function diagram(d) {
   return html`<div class="mo-subhead">${d.title}</div>${d.intro ? html`<p class="mo-card-desc" style="margin-bottom:12px;max-width:80ch">${d.intro}</p>` : ''}
     ${d.layers?.length ? layerList(d.layers) : ''}
-    ${d.cards?.length ? html`<div class="mo-grid mo-grid--3" style="margin-top:12px">${d.cards.map((c) => card({ compact: true, title: c.title, body: html`<p class="mo-card-desc">${c.description}</p>` }))}</div>` : ''}`;
+    ${d.cards?.length ? html`<div class="mo-grid mo-grid--3" style="margin-top:12px">${d.cards.map((c) => card({ compact: true, secondary: true, title: c.title, body: html`<p class="mo-card-desc">${c.description}</p>` }))}</div>` : ''}`;
 }
 
 function tab(t) {
@@ -41,13 +42,13 @@ export default {
   nav: { group: 'How it is built', label: 'Architecture', icon: 'topology' },
   render() {
     const items = arch.map((t) => ({ label: t.label, content: tab(t) }));
-    items.push({ label: 'Module Federation in 3D', icon: 'cubes', content: html`<p class="mo-section-header__desc" style="margin:16px 0">How a module reaches the screen: its pod serves a remote bundle and a Go BFF, the operator writes federation-config, and the host shell docks the module's pages at runtime.</p><div class="mo-diorama" data-scene="module-federation"></div>` });
-    return html`${sectionHeader({ ic: 'topology', tone: 'blue', title: 'Architecture', description: 'One platform, three surfaces. Pick a surface to see its layers — ours are highlighted — or open the 3D model of Module Federation.' })}
+    return html`${sectionHeader({ eyebrow: 'Architecture', title: 'Modules, composed at runtime.', description: 'Every feature is its own module, with its own pod and Go BFF. The Dashboard Operator decides which ones run and writes <code>federation-config</code>; the host loads them when the page opens. Try it.' })}
+      <div class="mo-reveal">${federation(modules.filter((m) => m.bff !== 'none'), { initiallyOff: ['autorag', 'data-connect-hub'] })}</div>
+      <h3 class="mo-subhead" style="margin-top:48px">One platform, three surfaces</h3>
       ${tabs('arch', items)}`;
   },
   mount(el) {
     mountTabs(el);
-    // The 3D tab mounts its scene only when opened.
-    el.addEventListener('tabchange', () => el.querySelectorAll('.mo-tab-panel:not([hidden]) [data-scene]:not([data-mounted])').forEach((s) => { s.dataset.mounted = '1'; mountScene(s); }));
+    mountFederation(el, modules.filter((m) => m.bff !== 'none'));
   },
 };

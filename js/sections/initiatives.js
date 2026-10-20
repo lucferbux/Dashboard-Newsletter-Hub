@@ -5,7 +5,7 @@ export default {
   id: 'initiatives',
   nav: { group: 'What is next', label: 'Initiatives', icon: 'flag' },
   render() {
-    return html`${sectionHeader({ ic: 'flag', tone: 'orange', title: 'Current initiatives', description: 'Strategies and initiatives in flight, straight from Jira.' })}
+    return html`${sectionHeader({ eyebrow: 'Initiatives', title: 'In flight now.', description: 'Strategies and initiatives we own or drive, straight from Jira.' })}
       <div class="mo-table-wrap"><table class="pf-v6-c-table pf-m-grid-lg" role="grid">
         <thead class="pf-v6-c-table__thead"><tr class="pf-v6-c-table__tr">
           <th class="pf-v6-c-table__th" scope="col">Initiative</th><th class="pf-v6-c-table__th" scope="col">Area</th><th class="pf-v6-c-table__th" scope="col">Status</th></tr></thead>

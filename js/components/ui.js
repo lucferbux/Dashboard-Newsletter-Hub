@@ -33,9 +33,11 @@ export function jiraLinks(keys = []) {
   return html`<span class="mo-jira">${keys.map((k) => html`<a class="mo-jira__link" href="${jiraUrl(k)}" target="_blank" rel="noopener">${esc(k)}</a>`)}</span>`;
 }
 
-/* ---------- Icon tile (the round/rounded icon used in RHOAI page headers and catalog cards) ---------- */
-export function iconTile(name, { tone = 'blue', size = 'md', round = false } = {}) {
-  return html`<span class="mo-tile mo-tile--${tone} mo-tile--${size} ${round ? 'mo-tile--round' : ''}">${icon(name)}</span>`;
+/* ---------- Icon chip ---------- */
+// One quiet style everywhere: the glyph in PatternFly blue on a soft chip. (`tone` is accepted for
+// backwards compatibility and ignored — colour-coding sections made the page noisy.)
+export function iconTile(name, { size = 'md', round = true } = {}) {
+  return html`<span class="mo-tile mo-tile--${size} ${round ? 'mo-tile--round' : ''}">${icon(name)}</span>`;
 }
 
 /* ---------- Buttons ---------- */
@@ -48,24 +50,31 @@ export function button(text, { href, variant = 'primary', ic, attrs = '', extern
 }
 
 /* ---------- Card ---------- */
-export function card({ title, titleHtml, body = '', footer = '', header = '', cls = '', attrs = '', compact = false, plain = false, id = '' }) {
-  return html`<div class="pf-v6-c-card ${compact ? 'pf-m-compact' : ''} ${plain ? 'pf-m-plain' : ''} ${cls}" ${id ? `id="${id}"` : ''} ${attrs}>
+// secondary: PatternFly's filled card (grey, no border) — the bento tile used across the site.
+export function card({ title, titleHtml, body = '', footer = '', header = '', cls = '', attrs = '', compact = false, plain = false, secondary = false, id = '' }) {
+  return html`<div class="pf-v6-c-card ${compact ? 'pf-m-compact' : ''} ${plain ? 'pf-m-plain' : ''} ${secondary ? 'pf-m-secondary' : ''} ${cls}" ${id ? `id="${id}"` : ''} ${attrs}>
     ${header || title || titleHtml ? html`<div class="pf-v6-c-card__header">${header}${title || titleHtml ? html`<div class="pf-v6-c-card__title"><h3 class="pf-v6-c-card__title-text">${titleHtml ?? esc(title)}</h3></div>` : ''}</div>` : ''}
     ${body ? html`<div class="pf-v6-c-card__body">${body}</div>` : ''}
     ${footer ? html`<div class="pf-v6-c-card__footer">${footer}</div>` : ''}
   </div>`;
 }
 
-/* ---------- Section header (icon tile + title + description, like RHOAI's "Models" page header) ---------- */
-export function sectionHeader({ ic, title, description, tone = 'blue', eyebrow }) {
-  return html`<header class="mo-section-header">
-    ${ic ? iconTile(ic, { tone, size: 'lg', round: true }) : ''}
-    <div>
-      ${eyebrow ? html`<div class="mo-eyebrow">${eyebrow}</div>` : ''}
-      <h2 class="pf-v6-c-title pf-m-2xl">${title}</h2>
-      ${description ? html`<p class="mo-section-header__desc">${description}</p>` : ''}
-    </div>
+/* ---------- Section header: eyebrow (blue), title, one paragraph ---------- */
+export function sectionHeader({ ic, title, description, eyebrow }) {
+  return html`<header class="mo-section-header mo-reveal">
+    ${eyebrow || ic ? html`<div class="mo-eyebrow">${ic ? icon(ic) : ''}${eyebrow ?? ''}</div>` : ''}
+    <h2 class="mo-section-title">${title}</h2>
+    ${description ? html`<p class="mo-section-header__desc">${description}</p>` : ''}
   </header>`;
+}
+
+/* ---------- Big numbers on a hairline row (the newsletter's stats) ---------- */
+export function stats(items) {
+  return html`<div class="mo-stats mo-reveal">${items.map((s, i) => html`<div class="mo-stats__item" style="--i:${i}">
+    <div class="mo-stats__bar"></div>
+    <div class="mo-stats__value">${typeof s.value === 'number' ? html`<span data-count="${s.value}">${s.value}</span>` : s.value}${s.suffix ?? ''}</div>
+    <div class="mo-stats__label">${s.label}</div>${s.description ? html`<div class="mo-stats__desc">${s.description}</div>` : ''}
+  </div>`)}</div>`;
 }
 
 /* ---------- Tabs (wired by mountTabs) ---------- */

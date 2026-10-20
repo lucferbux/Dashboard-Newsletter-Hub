@@ -15,7 +15,7 @@ function moduleCard(m) {
   return card({
     cls: 'mo-module',
     attrs: `data-category="${m.category}" data-bff="${m.bff ?? 'none'}" data-status="${m.status}" data-search="${(m.name + ' ' + m.description).toLowerCase().replace(/<[^>]+>/g, '').replace(/"/g, '')}"`,
-    header: html`<div class="mo-card-top" style="width:100%">${iconTile(m.icon, { tone })}${statusLabel(m.status)}</div>`,
+    header: html`<div class="mo-card-top" style="width:100%">${iconTile(m.icon)}${statusLabel(m.status)}</div>`,
     body: html`<div class="mo-card-name">${m.repo ? html`<a href="${m.repo}" target="_blank" rel="noopener">${m.name}</a>` : m.name}</div><p class="mo-card-desc">${m.description}</p>`,
     footer: html`<div class="mo-row">${label(CATEGORY[m.category] ?? m.category, { compact: true })}${m.bff ? label(BFF[m.bff] ?? m.bff, { compact: true, color: 'blue', ic: 'server-stack' }) : ''}${m.release ? label(`Since ${m.release}`, { compact: true, outline: true }) : ''}</div>${m.jira?.length ? html`<div style="margin-top:8px">${jiraLinks(m.jira)}</div>` : ''}`,
   });
@@ -27,7 +27,7 @@ export default {
   render() {
     const cats = [...new Set(modules.map((m) => m.category))];
     const count = (k, v) => modules.filter((m) => m[k] === v).length;
-    return html`${sectionHeader({ ic: 'catalog', tone: 'purple', title: 'RHOAI features on the modular architecture', description: `${modules.length} feature modules ship on the platform we own — each with its own team, pod and release cadence. Filter them like the RHOAI catalog.` })}
+    return html`${sectionHeader({ eyebrow: 'Module catalog', title: `${modules.length} features, one platform.`, description: 'Every feature module that runs on the platform we own, each with its own team, pod and backend. Filter them like the RHOAI catalog.' })}
       <div class="mo-catalog">
         <aside class="mo-catalog__filters" aria-label="Filters">
           <div><div class="mo-catalog__filter-title">Category</div>

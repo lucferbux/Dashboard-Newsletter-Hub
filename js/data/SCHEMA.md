@@ -17,6 +17,7 @@ Shared conventions
 export default {
   team: 'Dashboard Platform Team', short: 'Pewter',
   hero: { eyebrow, title, highlight /* word inside title to accent */, subtitle, ctas: [{ label, href, variant: 'primary'|'secondary', icon? }] },
+  stack: [{ id, name, text, ours?: true }],          // hero isometric stack, bottom → top; `ours` = blue layer
   stats: [{ value: '7', label: 'Ownership areas' }],
   links: { github, slack, ... },
   footer: [{ label, href }], footerNote?,
@@ -32,7 +33,7 @@ export default {
 
 ## modules.js — RHOAI features enabled by the modular architecture
 `[{ id, name, icon, category: 'gen-ai'|'model-lifecycle'|'automl'|'data'|'agents'|'observability'|'workbenches'|'platform',
-    status, bff: 'go'|'core'|'proxy'|'none', port?, bffHost?, release?: /* first release it shipped in, e.g. '2.25', '3.4' */, description, jira?: [], repo? }]`
+    status, bff?: 'go'|'core'|'proxy'|'none', dependsOn?: [moduleId] /* used by the federation simulator */, navLabel?, port?, bffHost?, release?: /* first release it shipped in, e.g. '2.25', '3.4' */, description, jira?: [], repo? }]`
 New categories need a label and a colour in `js/sections/modules.js` (CATEGORY, TONE).
 
 ## integrations.js — external integrations
