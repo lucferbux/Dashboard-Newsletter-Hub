@@ -100,17 +100,17 @@ export default [
   },
   {
     version: '3.6',
-    // Code freeze reached; stays in-progress until GA ships on 18 Nov. Highlights = work landed for 3.6.
+    // Code freeze reached; stays in-progress until GA ships on 2 Dec. Highlights = work landed for 3.6.
     status: 'in-progress',
-    ga: '2026-11-18',
+    ga: '2026-12-02',
     title: 'RHOAI 3.6 · Production hardening',
     theme: 'Hardening the modular architecture for production at scale',
-    summary: 'From a Tech Preview portal to GA-ready self-service, a fully tested operator, and a federated platform. <strong>Code freeze reached</strong> — the release is stabilizing for GA on 18 Nov, while 3.7 planning starts.',
-    progress: { done: 2, total: 3, label: 'Code freeze · EA1 and EA2 shipped, GA on 18 Nov' },
+    summary: 'From a Tech Preview portal to GA-ready self-service, a fully tested operator, and a federated platform. <strong>Code freeze reached</strong> — the release is stabilizing for GA on 2 Dec, while 3.7 planning starts.',
+    progress: { done: 2, total: 3, label: 'Code freeze · EA1 and EA2 shipped, GA on 2 Dec' },
     ticks: [
       { name: 'EA1', date: '2026-09-23', status: 'delivered', title: 'MaaS Portal Foundations', description: 'Consumer portal onboarded as an independently managed DSC submodule with operand manifests, App Picker entry, and the portal Core-BFF image.' },
       { name: 'EA2', date: '2026-10-14', status: 'delivered', title: 'Portal Self-Service + Operator E2E', description: 'Path-based routing, logout/sign-in return flow, governance views, and navigation polish land for the portal; the Dashboard Operator gains its envtest, conformance, and real-cluster E2E suites.' },
-      { name: 'GA', date: '2026-11-18', status: 'planned', title: 'Production Hardening', description: 'MaaS Portal GA with observability, operator cache redesign (OOM fix), operand NetworkPolicies, TLS-Scanner CI, model-serving federation, and Core BFF xKS readiness.' },
+      { name: 'GA', date: '2026-12-02', status: 'planned', title: 'Production Hardening', description: 'MaaS Portal GA with observability, operator cache redesign (OOM fix), operand NetworkPolicies, TLS-Scanner CI, model-serving federation, and Core BFF xKS readiness.' },
     ],
     highlights: [
       {

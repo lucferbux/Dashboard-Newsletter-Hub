@@ -57,7 +57,7 @@ New categories need a label and a colour in `js/sections/modules.js` (CATEGORY, 
 
 ## releases.js — one entry per RHOAI release (newest last)
 ```js
-[{ version: '3.6', status: 'delivered'|'in-progress', ga: '2026-11-18', title: 'RHOAI 3.6 · Production hardening', theme, summary,
+[{ version: '3.6', status: 'delivered'|'in-progress', ga: '2026-12-02', title: 'RHOAI 3.6 · Production hardening', theme, summary,
    ticks?: [{ name: 'EA1'|'EA2'|'GA', date: 'YYYY-MM-DD', status, title, description }],   // rendered as a progress stepper
    progress?: { done: number, total: number, label },                                     // optional; default = delivered ticks
    highlights: [{ title, area /* free text, becomes a filter chip */, status, icon?, description, tags?: [string], jira?: [] }],
