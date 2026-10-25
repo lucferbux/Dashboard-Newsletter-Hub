@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<title>RHOAI 3.6: ready for production, built to stay that way</title>
+</head>
+<body style="margin:0;padding:0;background:#f2f2f2;">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#f2f2f2;">A portal for model consumers, an operator that proves every change, OpenShift 5 readiness — and an engineering system where an agent reviews every pull request and vulnerabilities stop before they merge.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2" style="background:#f2f2f2;">
+<tr><td align="center" style="padding:28px 8px 36px 8px;">
+<center>
+<table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;">
+<tr><td bgcolor="#ffffff" style="background:#ffffff;border:1px solid #e0e0e0;border-radius:20px;box-shadow:0 8px 28px rgba(0,0,0,0.07);">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:22px 32px 18px 32px;border-bottom:1px solid #e0e0e0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td width="30" valign="middle" style="padding-right:10px;"><img src="./logo.png" width="22" height="22" alt="" style="display:block;border:0;outline:none;width:100%;max-width:22px;height:auto;"></td>
+  <td valign="middle" style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#151515;"><strong>Red Hat OpenShift AI</strong><span style="color:#707070;">&nbsp;&nbsp;Dashboard Platform</span></td>
+  <td align="right" valign="middle" style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#707070;">RHOAI 3.6</td>
+</tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:52px;">&nbsp;</td></tr><tr><td style="padding:0 40px;"><p style="margin:0 0 14px 0;text-align:center;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">RHOAI 3.6 · Dashboard Platform</span></p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:46px;line-height:54px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Ready for production. Built to stay that way.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:16px 0 0 0;font-size:18px;line-height:28px;color:#4d4d4d;text-align:center;">In 3.6 the Dashboard Platform worked on both sides of the product. What customers run became dependable: a portal for model consumers, an operator that proves every change and a dashboard ready for OpenShift 5. How every dashboard team builds it changed too: an agent reviews each pull request, and vulnerabilities stop before they merge.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr><tr><td style="padding:0 32px;"><img src="./hero.png" width="576" alt="The RHOAI stack: OpenShift, the RHOAI platform, components, the Dashboard platform (highlighted, with modules on top) and the distributions built from it." style="display:block;border:0;outline:none;width:100%;max-width:576px;height:auto;"></td></tr><tr><td style="font-size:0;line-height:0;height:36px;">&nbsp;</td></tr><tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;"><tr>
+    <td width="25%" valign="top" style="padding:22px 12px 20px 0px;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">148</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">changes shipped in 3.6</p>
+    </td><td width="25%" valign="top" style="padding:22px 12px 20px 16px;border-left:1px solid #e0e0e0;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">149</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">engineering-system improvements</p>
+    </td><td width="25%" valign="top" style="padding:22px 12px 20px 16px;border-left:1px solid #e0e0e0;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">18</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">epics delivered</p>
+    </td><td width="25%" valign="top" style="padding:22px 12px 20px 16px;border-left:1px solid #e0e0e0;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">4</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">critical CVEs fixed before EA2</p>
+    </td></tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Why it matters</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Built for the business, not just the backlog.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">Most of 3.6 is invisible in a demo. It shows up as a new way to sell models, fewer escalations after upgrades, and fixes that reach customers before a release, not after.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="33%" valign="top" style="padding:0 18px 0 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0 0 6px 0;font-size:17px;line-height:22px;font-weight:600;color:#151515;">A new way to sell models</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">People who only consume models no longer need an OpenShift account. That opens Models-as-a-Service to every developer in a customer's organization.</p>
+    </td><td width="33%" valign="top" style="padding:0 18px 0 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0 0 6px 0;font-size:17px;line-height:22px;font-weight:600;color:#151515;">Fewer escalations</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Operator changes are tested on a real cluster before they merge. Upgrade surprises are caught by us, not by customers.</p>
+    </td><td width="33%" valign="top" style="padding:0 0px 0 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0 0 6px 0;font-size:17px;line-height:22px;font-weight:600;color:#151515;">Safer code, sooner</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">An agent gives every pull request its first review, and vulnerable dependencies are fixed when they appear, not during release preparation.</p>
+    </td></tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">What's new</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Shipped in 3.6.</h2></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#5e40be;background:#ece6ff;border-radius:999px;padding:2px 10px;">Tech Preview</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:22px;line-height:26px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">MaaS Portal. A front door for models.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Developers who call models, but never run clusters, now have a place of their own. They see the endpoints they have been granted, create API keys and follow their usage, without an OpenShift account. The portal ships as its own distribution, built from the same code as the RHOAI dashboard.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1545" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHAISTRAT-1545</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-88481" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-88481</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./portal.png" width="528" alt="The MaaS Portal: navigation with Models, API keys, Subscriptions, Usage and Playground; a list of API keys and a token usage chart." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Ready for OpenShift 5.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">OpenShift 5 closes networking by default, asks every component to follow the cluster's TLS profile and installs operators through OLM v1. The dashboard now ships its own least-privilege network policy for every component, reads the cluster TLS profile with a TLS scanner in CI, and recognises both install models, so customers can move to OpenShift 5 without waiting on us.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-93714" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-93714</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-75339" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-75339</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-95173" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-95173</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./net-policy.png" width="528" alt="Default-deny networking: traffic enters through the data science gateway to the dashboard and Core BFF, which talks to its modules and to an explicit list of services (pipelines, MLflow, metrics). Any other traffic is blocked." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-module-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Model serving, as a module.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Model serving now loads as an independent module with no dependencies on dashboard internals. It is the pattern every remaining feature will follow.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-79873" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-79873</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-speedometer-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Lighter on large clusters.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The operator now caches only what it manages, so its memory stays flat as clusters grow, including through upgrades.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-98541" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-98541</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Quality</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Built not to break.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">The Dashboard operator installs and upgrades every module on every cluster. A regression there is not a bug, it is an outage. So in 3.6 every operator change has to pass three layers of tests before it can merge.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Problems caught in a pull request, not in a release.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Fast integration tests check each reconcile path, conformance tests check the operator against the platform contract, and then the change is installed on a real cluster. Issues that used to surface as release blockers now stop at review.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-83682" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-83682</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./test-flow.png" width="528" alt="A change moves from pull request through envtest, conformance and real-cluster tests before release; the three test stages are where problems are caught." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-check-circle-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Every release signed off.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Test plans, test matrices on real clusters, and product and documentation sign-off for the dashboard at EA1 and EA2.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-83062" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-83062</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-92375" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-92375</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#003366" valign="top" width="234" style="background:#003366;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      
+      
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#73bcf7;text-align:left;">Before EA2</p>
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#ffffff;text-align:left;">4 critical CVEs, fixed.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#d2e5f7;text-align:left;">A sweep across the whole repository found critical advisories in four backend images. All four were fixed before the second early-access release.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-94985" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#9ec7ef;text-decoration:none;">RHOAIENG-94985</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-81265" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#9ec7ef;text-decoration:none;">RHOAIENG-81265</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">How we build</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">A faster, safer way to ship.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">Every dashboard team merges into one repository, and the platform owns the engineering system behind it. In 3.6 it changed how code is reviewed, how vulnerabilities are caught and where tests run. None of it ships in a product image; all of it shows up in how fast and how safely the product does.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">An agent reviews every pull request.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Since October every pull request to the dashboard gets a first review on Fullsend, the shared agentic review host. It checks that the change is described, runs the dashboard's own review skills and CodeRabbit, confirms the work has a product ask in Jira, and leaves everything in a single comment. A person always makes the final call: there is no automerge. Senior reviewers spend their time on judgment, not on routine checks.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-98886" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-98886</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-82121" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-82121</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./review-flow.png" width="528" alt="A pull request goes to an agent reviewer that checks the description, runs the dashboard review skills and an automated code review, and checks the Jira product ask; it posts one review comment, and a person makes the final call." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Vulnerabilities stop at the pull request.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Go code now gets the same protection as JavaScript: automatic dependency updates and a vulnerability check on every pull request, for the Go backends and the operator. The health grades of ten dashboard images were fixed too. A vulnerable library is replaced the day a fix exists, not during release preparation.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-80315" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-80315</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-80316" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-80316</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-95685" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-95685</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./test-flow-2.png" width="528" alt="A dependency update moves through a vulnerability scan, auto-merge and image health checks before release; vulnerabilities are stopped before the release." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-migrate-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">CI kept running through a shutdown.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Test clusters, CI runners and shared development clusters moved off the retiring PSI OpenStack before its 30 September shutdown.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-90620" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-90620</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-build-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">A lighter build.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The repository's workspace, CI and 28 container builds moved to pnpm, and CI now runs only the tests a change affects.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-83227" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-83227</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-97761" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-97761</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">What we enabled</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">More products, one platform.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">A platform team succeeds when others ship on top of it. In 3.6 a new product came from the same code, and every team got the review and security tooling for free.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">One codebase, more products.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The same code ships as the full RHOAI dashboard and, new in 3.6, as the MaaS Portal. Next, it becomes the model deployment experience for Kubernetes beyond OpenShift.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-90189" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-90189</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./fan-out.png" width="528" alt="The odh-dashboard monorepo feeds three products: the RHOAI dashboard, the MaaS Portal (new in 3.6) and RHAII on any Kubernetes (next)." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-rocket-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Onboarding by convention.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">A new module now gets most of its operator settings by convention, and each team owns its own manifests. Data Connect Hub joined this way.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-81871" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-81871</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://redhat.atlassian.net/browse/RHOAIENG-90399" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-90399</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-server-stack-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">A backend that travels.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The Go Core BFF routes every module API and carries the user's identity through. It is the groundwork for the dashboard beyond OpenShift.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-85775" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;">RHOAIENG-85775</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Coming in 3.7</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">What we are working on next.</h2></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:14px 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">RHOAI beyond OpenShift</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The model deployment experience and the MaaS interface on AKS and other Kubernetes distributions.</p>
+    </td></tr><tr><td style="padding:14px 0;border-top:1px solid #e0e0e0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">An operator ready for the enterprise</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Least-privilege access, real operational metrics, exact status reporting and high availability.</p>
+    </td></tr><tr><td style="padding:14px 0;border-top:1px solid #e0e0e0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">Community plugins</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Partners adding their own pages to the RHOAI dashboard without forking it.</p>
+    </td></tr><tr><td style="padding:14px 0;border-top:1px solid #e0e0e0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">Breaking API changes caught in CI</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Contract checks between the dashboard and its backends, and end-to-end results every team can see.</p>
+    </td></tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr><td bgcolor="#003366" valign="top" style="background:#003366;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:22px;line-height:26px;font-weight:600;letter-spacing:-0.2px;color:#ffffff;text-align:left;">See the whole platform.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#d2e5f7;text-align:left;">The architecture, every module, every release and the 3.7 plan, in one place.</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:14px 0 0 0;font-size:14px;line-height:20px;"><a href="https://lucferbux.github.io/Openshift-AI-Platform-Overview/" style="color:#ffffff;text-decoration:none;">Open the Dashboard Platform showcase&nbsp;&rsaquo;</a></p>
+      
+      
+    </td></tr></table></td></tr><tr><td style="font-size:0;line-height:0;height:40px;">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:24px 32px 8px 32px;">
+    <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 10px 0;font-size:12px;line-height:18px;"><a href="https://lucferbux.github.io/Openshift-AI-Platform-Overview/" style="color:#4d4d4d;text-decoration:none;">Showcase</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://github.com/opendatahub-io/odh-dashboard" style="color:#4d4d4d;text-decoration:none;">odh-dashboard</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://github.com/opendatahub-io/mod-arch-library" style="color:#4d4d4d;text-decoration:none;">mod-arch-library</a></p>
+    <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:12px;line-height:18px;color:#707070;">Dashboard Platform team · Red Hat OpenShift AI</p>
+  </td></tr>
+</table>
+</center>
+</td></tr></table>
+</body>
+</html>
