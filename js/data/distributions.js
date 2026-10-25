@@ -21,9 +21,9 @@ export default {
     {
       name: 'MaaS Portal',
       icon: 'tenant',
-      // TODO verify: the matrix says TP → GA, while the 3.6 release marks the MaaS Portal GA-ready / delivered.
-      status: 'in-progress',
-      cells: ['Frontend-only (BFF reuse)', 'maas + gen-ai', 'Core BFF', 'OpenShift', 'Auth-agnostic', 'TP → GA'],
+      // Feature complete for 3.6 and already live, ahead of the 3.6 GA release (Lucas, 25 Oct 2026).
+      status: 'live',
+      cells: ['Frontend-only (BFF reuse)', 'maas + gen-ai', 'Core BFF', 'OpenShift', 'Auth-agnostic', 'Live · 3.6'],
       jira: ['RHAISTRAT-1545', 'RHAISTRAT-2272'],
     },
   ],
