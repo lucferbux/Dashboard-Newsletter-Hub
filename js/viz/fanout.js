@@ -6,6 +6,7 @@ const W = 640, H = 300;
 
 export function fanout(dist) {
   const rows = dist.rows;
+  const sub = Math.max(0, dist.columns.indexOf('Platform'));   // node subtitle: the platform each product runs on
   const sy = H / 2, sw = 190, tx = W - 220;
   const ty = (i) => 36 + i * ((H - 72) / Math.max(1, rows.length - 1));
   const paths = rows.map((r, i) => `<path class="mo-fan__path" data-i="${i}" pathLength="1" d="M${sw},${sy} C${sw + 90},${sy} ${tx - 100},${ty(i)} ${tx - 12},${ty(i)}"/>`).join('');
@@ -13,7 +14,7 @@ export function fanout(dist) {
       <rect x="${tx}" y="${ty(i) - 24}" width="208" height="48" rx="12"/>
       <circle class="mo-fan__dot" cx="${tx - 6}" cy="${ty(i)}" r="4"/>
       <text class="mo-fan__name" x="${tx + 16}" y="${ty(i) - 3}">${esc(r.name)}</text>
-      <text class="mo-fan__sub" x="${tx + 16}" y="${ty(i) + 13}">${esc(r.cells[2] ?? '')}</text>
+      <text class="mo-fan__sub" x="${tx + 16}" y="${ty(i) + 13}">${esc(r.cells[sub] ?? '')}</text>
     </g>`).join('');
   return html`<div class="mo-fan" data-fan>
     <svg viewBox="0 0 ${W} ${H}" class="mo-fan__svg" role="group" aria-label="One monorepo, packaged as several products">

@@ -35,8 +35,8 @@ export default [
     id: 'core-bff',
     title: 'Core BFF',
     icon: 'server-stack',
-    summary: 'The Go backend replacing Fastify — auth, config, status, and proxies. The sole backend in the xKS distribution, and reused in MaaS mode by the MaaS Portal.',
-    jira: ['RHOAIENG-60028'],
+    summary: 'The Go backend for every distribution — auth, config, status and proxies. It is already the backend of the RHAII/xKS and MaaS Portal distributions; in RHOAI it runs as a side container today and is being promoted to the main backend as Fastify is deprecated.',
+    jira: ['RHOAIENG-60028', 'RHOAIENG-83695'],
   },
   {
     id: 'manifests',
