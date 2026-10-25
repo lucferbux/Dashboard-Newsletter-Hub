@@ -1,4 +1,4 @@
-// The seven ownership areas named in the hero. Summaries come from the About cards
+// The eight ownership areas named in the hero. Summaries come from the About cards
 // (Modular Architecture, Dashboard Operator, Platform Operations, Distributions & Support)
 // and, for the areas without a card, from facts stated elsewhere on the page.
 export default [
@@ -56,5 +56,17 @@ export default [
     icon: 'rocket',
     summary: 'Onboarding and tooling support for module teams. Claude Code skills (<strong>/module-onboarding</strong>, <strong>/konflux-onboarding</strong>) bring a new module and its build pipeline online in ~4 hours instead of 5 working days.',
     jira: ['RHOAIENG-37060'],
+  },
+  {
+    id: 'engineering-system',
+    title: 'Engineering System &amp; Security',
+    icon: 'secured',
+    summary: 'The system every dashboard team ships through: one monorepo, its CI and test infrastructure, release sign-off, agentic pull-request review and automated vulnerability defence. It keeps a dozen teams merging into one repository fast and safely.',
+    points: [
+      'Agentic PR review on Fullsend for every pull request, with CodeRabbit behind one review comment; a person always decides',
+      'Dependabot with auto-merge and govulncheck on every PR for Go and JavaScript; image health graded for every dashboard image',
+      'CI and E2E clusters, release test matrices and sign-off for every early-access drop',
+    ],
+    jira: ['RHOAIENG-82121', 'RHOAIENG-57870'],
   },
 ];

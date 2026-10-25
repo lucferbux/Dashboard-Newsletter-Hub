@@ -21,10 +21,10 @@ export default {
     { id: 'distributions', name: 'Distributions', text: 'The same code, packaged three ways: the full RHOAI dashboard, the MaaS Portal and RHAII on any Kubernetes.' },
   ],
   stats: [
-    { value: '7', label: 'Areas we own' },
+    { value: '8', label: 'Areas we own' },
     { value: '10+', label: 'Teams building on it' },
     { value: '14', label: 'Feature modules' },
-    { value: '5', label: 'Engineers' },
+    { value: '100%', label: 'PRs reviewed by an agent' },
   ],
   // Section headings and subtitles as they appear on the page.
   sections: {

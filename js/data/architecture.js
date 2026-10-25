@@ -13,7 +13,7 @@ export default [
     intro: 'RHOAI is a productized, operator-managed AI/ML platform layered on OpenShift and built from the upstream Open Data Hub (ODH) distribution — one codebase and one operator, shipped as overlays rather than forks. The Dashboard is the unifying console that spans every layer of the stack.',
     layers: [
       { id: 'distributions', name: 'Distributions &amp; Future', items: ['xKS', 'MaaS Portal', 'Gateway Sharding', 'BYO-OIDC'] },
-      { id: 'dashboard', name: 'Dashboard — Pewter', owner: 'pewter', items: ['Module Federation host', 'per-module Go BFFs', 'Core BFF', 'Dashboard Operator', 'manifests'] },
+      { id: 'dashboard', name: 'Dashboard Platform', owner: 'pewter', items: ['Module Federation host', 'per-module Go BFFs', 'Core BFF', 'Dashboard Operator', 'manifests'] },
       { id: 'components', name: 'Components', owner: 'components', items: ['KServe / model serving', 'AI Gateway + MaaS', 'Gen AI', 'Model Registry', 'Pipelines', 'Workbenches', 'TrustyAI'] },
       { id: 'platform', name: 'RHOAI Platform', owner: 'platform', items: ['opendatahub-operator / rhods-operator', 'DataScienceCluster (DSC / DSCI)', 'platform networking &amp; auth'] },
       { id: 'openshift', name: 'OpenShift', owner: 'openshift', items: ['OLM', 'Gateway API / Routes', 'OAuth / OIDC', 'RBAC', 'NetworkPolicies', 'TLS'] },
