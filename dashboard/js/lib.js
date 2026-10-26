@@ -26,7 +26,7 @@ export function mountScrolly(root, onStep) {
       steps.forEach((s, k) => s.classList.toggle('is-active', k === i));
       onStep(i);
     });
-  }, { rootMargin: '-45% 0px -45% 0px' });
+  }, { rootMargin: matchMedia('(max-width: 960px)').matches ? '-72% 0px -22% 0px' : '-45% 0px -45% 0px' }); // phones: the console covers the top half
   steps.forEach((s) => io.observe(s));
   onStep(0); steps[0]?.classList.add('is-active'); current = 0;
   return () => io.disconnect();

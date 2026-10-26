@@ -201,10 +201,14 @@ button { font: inherit; color: inherit; }
 @media (max-width: 960px) {
   .split, .split--flip { grid-template-columns: 1fr; }
   .split--flip .split__copy { order: 0; }
-  .scrolly { grid-template-columns: 1fr; gap: 0; }
-  .scrolly__stage { position: sticky; top: 0; height: auto; z-index: 2; background: var(--bg); padding: 12px 0; }
-  .scrolly__steps { padding: 4vh 0 10vh; }
-  .scrolly__step { min-height: 52vh; }
+  /* Phones and tablets: the console sits pinned at the top and the steps scroll underneath it */
+  .scrolly { grid-template-columns: 1fr; gap: 0; margin-top: 40px; }
+  .scrolly__stage { order: -1; position: sticky; top: 0; height: auto; z-index: 2; background: var(--bg); padding: 12px 0 16px; box-shadow: 0 14px 18px -14px rgba(0, 0, 0, .12); }
+  .scrolly__stage .progress { margin-bottom: 10px; }
+  .scrolly__steps { padding: 4vh 0 22vh; }
+  .scrolly__step { min-height: 46vh; justify-content: flex-start; padding-top: 6vh; }
+  .scrolly__step h3 { font-size: 26px; margin: 6px 0 8px; }
+  .scrolly__step p { font-size: 16px; }
   .config { grid-template-columns: 1fr; }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .card--2, .card--3, .card--4, .card--6 { grid-column: span 2; }
