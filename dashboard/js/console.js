@@ -42,7 +42,7 @@ export const searchInput = (ph) => `<div class="pf-v6-c-text-input-group"><div c
 /** Page header: icon in a tinted circle, title, then description. */
 export const pageHeader = (iconName, title, desc = '', bg = '#ece6ff') => html`<div class="ph"><span class="ph__icon" style="--ph-bg:${bg}">${rhIcon(iconName, { size: 22 })}</span><h1>${title}</h1></div>${desc ? `<p class="ph-desc">${desc}</p>` : ''}`;
 
-export const table = (cols, rows, { compact = true, attrs = '' } = {}) => html`<table class="pf-v6-c-table pf-m-grid-md ${compact ? 'pf-m-compact' : ''}" role="grid" ${attrs}>
+export const table = (cols, rows, { compact = true, attrs = '' } = {}) => html`<table class="pf-v6-c-table ${compact ? 'pf-m-compact' : ''}" role="grid" ${attrs}>
   <thead class="pf-v6-c-table__thead"><tr class="pf-v6-c-table__tr">${cols.map((c) => `<th class="pf-v6-c-table__th" scope="col">${c}</th>`)}<th class="pf-v6-c-table__th"></th></tr></thead>
   <tbody class="pf-v6-c-table__tbody">${rows.map((r) => tr(r))}</tbody></table>`;
 export const tr = (r, cls = '') => `<tr class="pf-v6-c-table__tr ${cls}">${r.map((c) => `<td class="pf-v6-c-table__td">${c}</td>`).join('')}<td class="pf-v6-c-table__td pf-v6-c-table__action"><button class="pf-v6-c-menu-toggle pf-m-plain" tabindex="-1">${fa('kebab')}</button></td></tr>`;
@@ -61,7 +61,7 @@ export function consoleWindow({ url = 'rhoai-dashboard.apps.cluster.example.com'
   return html`<div class="console ${cls}" ${id ? `id="${id}"` : ''}>
   <div class="console__bar"><i></i><i></i><i></i><div class="console__url">${fa('lock')}${url}</div></div>
   <div class="console__page pf-v6-c-page">
-    <header class="pf-v6-c-masthead">
+    <header class="pf-v6-c-masthead pf-m-display-inline">
       <div class="pf-v6-c-masthead__main">
         <span class="pf-v6-c-masthead__toggle"><button class="pf-v6-c-button pf-m-plain pf-m-hamburger" tabindex="-1"><span class="pf-v6-c-button__icon">${fa('hamburger', { size: '18px' })}</span></button></span>
         <div class="pf-v6-c-masthead__brand"><span class="pf-v6-c-masthead__logo"><img src="${logo}" alt=""></span></div>
@@ -104,6 +104,33 @@ export function go(win, { current, body, instant = false }) {
   if (instant) { pane.innerHTML = body; return Promise.resolve(); }
   pane.classList.add('is-swapping');
   return new Promise((r) => setTimeout(() => { pane.innerHTML = body; pane.classList.remove('is-swapping'); r(); }, 300));
+}
+
+/* ---------- Phones and tablets ----------
+   PatternFly's responsive rules follow the real viewport, so on a phone the scaled console would stack its masthead and
+   turn tables into cards. Below 960px every console is instead drawn at a fixed layout width (no sidebar) and zoomed to
+   fit its frame, like a screenshot. Desktop keeps the zoom set in console.css. */
+const NARROW = matchMedia('(max-width: 960px)');
+const LAYOUT_WIDTH = 780;
+export function fitConsoles(root) {
+  let queued = false;
+  const fit = () => {
+    queued = false;
+    $$('.console', root).forEach((c) => {
+      const page = $('.console__page', c);
+      if (!page) return;
+      if (NARROW.matches) page.style.setProperty('--z', (c.clientWidth / LAYOUT_WIDTH).toFixed(3));
+      else page.style.removeProperty('--z');
+    });
+  };
+  const schedule = () => { if (!queued) { queued = true; requestAnimationFrame(fit); } };
+  const ro = new ResizeObserver(schedule);
+  ro.observe(root);
+  const mo = new MutationObserver((ms) => { if (ms.some((m) => [...m.addedNodes].some((n) => n.nodeType === 1 && (n.matches('.console') || n.querySelector?.('.console'))))) schedule(); });
+  mo.observe(root, { childList: true, subtree: true });
+  NARROW.addEventListener('change', schedule);
+  fit();
+  return () => { ro.disconnect(); mo.disconnect(); NARROW.removeEventListener('change', schedule); };
 }
 
 export { label };

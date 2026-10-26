@@ -1,6 +1,7 @@
 // Four products, one page each. The hash (#rhoai, #maas, #xks, #aigrid) selects the tab; each page module exports
 // { id, label, render(), mount(root) → cleanup }.
 import { $, $$, mountReveals, rhIcon } from './lib.js';
+import { fitConsoles } from './console.js';
 import rhoai from './pages/rhoai.js';
 import maas from './pages/maas.js';
 import xks from './pages/xks.js';
@@ -35,7 +36,7 @@ function show(id) {
   requestAnimationFrame(() => {
     app.innerHTML = page.render();
     scrollTo({ top: 0, behavior: 'instant' });
-    cleanup.push(mountReveals(app), page.mount?.(app));
+    cleanup.push(mountReveals(app), page.mount?.(app), fitConsoles(app));
     requestAnimationFrame(() => { app.style.transition = 'opacity .5s cubic-bezier(.2,.8,.2,1)'; app.style.opacity = 1; });
   });
 }

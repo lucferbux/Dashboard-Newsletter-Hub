@@ -110,12 +110,15 @@
 .cursor.is-click::after { content: ''; position: absolute; left: -9px; top: -9px; width: 22px; height: 22px; border-radius: 50%; border: 2px solid #0066cc; animation: ping .5s ease-out; }
 @keyframes ping { from { transform: scale(.4); opacity: 1; } to { transform: scale(1.6); opacity: 0; } }
 
+/* Below 960px the zoom comes from fitConsoles() (js/console.js); only the frame height and the sidebar change here. */
 @media (max-width: 960px) {
-  .console__page.pf-v6-c-page { --z: .5; }
   .console__page .pf-v6-c-page__sidebar { display: none; }
+  .console__page.pf-v6-c-page, .console--tall .console__page.pf-v6-c-page, .console--short .console__page.pf-v6-c-page { --h: 460px; }
 }
 @media (max-width: 640px) {
-  .console__page.pf-v6-c-page { --z: .36; --h: 380px; }
+  .console__page.pf-v6-c-page, .console--tall .console__page.pf-v6-c-page, .console--short .console__page.pf-v6-c-page { --h: 380px; }
+  .console__bar { height: 30px; }
+  .console__url { font-size: 10px; height: 20px; }
 }
 
 .console .is-pressed { box-shadow: 0 0 0 4px rgba(0, 102, 204, .35) !important; transform: scale(.97); transition: transform .15s, box-shadow .15s; }
