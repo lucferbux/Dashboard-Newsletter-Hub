@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<title>RHOAI 3.6: from "which model?" to a running AI application</title>
+</head>
+<body style="margin:0;padding:0;background:#f2f2f2;">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#f2f2f2;">One product, one story: find models and MCP servers, deploy them with one wizard, share them through MaaS, build in Gen AI Studio, evaluate with EvalHub and automate with AutoML and AutoRAG — three of them now GA.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2" style="background:#f2f2f2;">
+<tr><td align="center" style="padding:28px 8px 36px 8px;">
+<center>
+<table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;">
+<tr><td bgcolor="#ffffff" style="background:#ffffff;border:1px solid #e0e0e0;border-radius:20px;box-shadow:0 8px 28px rgba(0,0,0,0.07);">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:22px 32px 18px 32px;border-bottom:1px solid #e0e0e0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td width="30" valign="middle" style="padding-right:10px;"><img src="./logo.png" width="22" height="22" alt="" style="display:block;border:0;outline:none;width:100%;max-width:22px;height:auto;"></td>
+  <td valign="middle" style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#151515;"><strong>Red Hat OpenShift AI</strong><span style="color:#707070;">&nbsp;&nbsp;RHOAI Dashboard</span></td>
+  <td align="right" valign="middle" style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#707070;">RHOAI 3.6</td>
+</tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:52px;">&nbsp;</td></tr><tr><td style="padding:0 40px;"><p style="margin:0 0 14px 0;text-align:center;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">RHOAI 3.6 · RHOAI Dashboard</span></p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:46px;line-height:54px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">From "which model?" to a running AI application.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:16px 0 0 0;font-size:18px;line-height:28px;color:#4d4d4d;text-align:center;">In 3.6 the RHOAI dashboard connected the whole generative AI path in one product. A team can find a model, deploy it, share it, build on it, measure it and automate it without leaving RHOAI. Three of those steps reach General Availability, and the platform underneath became ready for OpenShift 5.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr><tr><td style="padding:0 32px;"><img src="./hero.png" width="576" alt="The RHOAI stack: OpenShift, the RHOAI platform, components, the dashboard (highlighted, with modules on top) and the distributions built from it." style="display:block;border:0;outline:none;width:100%;max-width:576px;height:auto;"></td></tr><tr><td style="font-size:0;line-height:0;height:36px;">&nbsp;</td></tr><tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;"><tr>
+    <td width="25%" valign="top" style="padding:22px 12px 20px 0px;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">60</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">features and initiatives shipped</p>
+    </td><td width="25%" valign="top" style="padding:22px 12px 20px 16px;border-left:1px solid #e0e0e0;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">3</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">capabilities reach GA</p>
+    </td><td width="25%" valign="top" style="padding:22px 12px 20px 16px;border-left:1px solid #e0e0e0;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">6</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">steps of one path, all improved</p>
+    </td><td width="25%" valign="top" style="padding:22px 12px 20px 16px;border-left:1px solid #e0e0e0;">
+      <div style="width:24px;height:3px;line-height:3px;font-size:0;background:#0066cc;border-radius:2px;margin:0 0 14px 0;">&nbsp;</div>
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:34px;line-height:38px;font-weight:600;letter-spacing:-0.5px;color:#151515;">3</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:6px 0 0 0;font-size:13px;line-height:18px;color:#4d4d4d;">release drops: EA1, EA2, GA</p>
+    </td></tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:56px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">The release in one picture</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">One path, end to end.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">Every step of the path got better in 3.6. The number on each step is how many features shipped there; the blue steps reach General Availability.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><img src="./journey.png" width="576" alt="The 3.6 journey: Find (AI Hub, 6 features), Deploy (model serving, 3), Share (MaaS, 5), Build (Gen AI Studio, 8, GA), Evaluate (EvalHub, 6) and Automate (AutoML and AutoRAG, 18, GA)." style="display:block;border:0;outline:none;width:100%;max-width:576px;height:auto;"></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Why it matters</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Fewer tools to stitch together.</h2></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="33%" valign="top" style="padding:0 18px 0 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0 0 6px 0;font-size:17px;line-height:22px;font-weight:600;color:#151515;">The whole path in one product</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Customers go from choosing a model to a governed API and an evaluated application inside RHOAI.</p>
+    </td><td width="33%" valign="top" style="padding:0 18px 0 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0 0 6px 0;font-size:17px;line-height:22px;font-weight:600;color:#151515;">Ready for production</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Gen AI Studio, AutoML and AutoRAG leave Tech Preview: supported for real workloads, not only trials.</p>
+    </td><td width="33%" valign="top" style="padding:0 0px 0 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0 0 6px 0;font-size:17px;line-height:22px;font-weight:600;color:#151515;">Governed by design</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">MCP servers get a governed registry, models a self-service portal, and the platform meets OpenShift 5.</p>
+    </td></tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Find and deploy</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">The catalog knows what a model can do.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">The AI Hub became the governed front door for models and MCP servers, and deploying from it carries what the catalog knows into the deployment.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">One capability vocabulary, everywhere.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">A model's capabilities are set once, when it is deployed. The AI Hub catalog, the Gen AI Studio playground and the MaaS model lists all read the same annotations, so users see the same answer to "what can this model do?" wherever they look.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1556" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1556</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./fan-out.png" width="528" alt="Model capability metadata set at deployment feeds three surfaces: the AI Hub catalog, the Gen AI Studio playground and the MaaS model lists." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-mcp-server-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">MCP, governed.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Discover an MCP server, deploy or register it, and track owner, version and policy.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2027" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2027</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1762" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1762</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-lock-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Private models.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Admin-managed credentials bring private and gated Hugging Face models into the catalog.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1258" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1258</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-ai-model-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">NIM in one wizard.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">NVIDIA NIM deploys from the same wizard as every other runtime.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1202" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1202</a></p>
+      
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-controls-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">llm-d in one page.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Admins manage inference configs, runtimes and accelerators in one tabbed page.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1281" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1281</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-plug-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Tool calling, pre-filled.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Deploying from the catalog carries the model's validated tool-calling settings.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1472" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1472</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-hourglass-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Queues you can see.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Kueue scheduling state on deployments, and a quota view for admins.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-432" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-432</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1577" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1577</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Share</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Models as a product, not a cluster.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">Models-as-a-Service turns a deployed model into something a developer can subscribe to — with a key, a quota and a priority — and the same building blocks now serve AI Grid tenants.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#5e40be;background:#ece6ff;border-radius:999px;padding:2px 10px;">New in 3.6</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:22px;line-height:26px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">MaaS Portal. A front door for models.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Developers who call models, but never run clusters, get a place of their own: the endpoints they have been granted, their API keys and their usage, without an OpenShift account. It ships as its own distribution, built from the same code as the RHOAI dashboard.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1545" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1545</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./portal.png" width="528" alt="The MaaS Portal: navigation with Models, API keys, Subscriptions, Usage and Playground; a list of API keys and a token usage chart." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-cloud-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">External models, managed here.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Admins create, edit and delete external models and providers from the dashboard, next to the models they host.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2318" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2318</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2319" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2319</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#003366" valign="top" width="234" style="background:#003366;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      
+      
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#73bcf7;text-align:left;">Subscriptions</p>
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#ffffff;text-align:left;">Priority reaches the scheduler.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#d2e5f7;text-align:left;">A subscription's request priority now flows to llm-d flow control, so llm-d can serve higher-priority subscriptions first.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2701" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#9ec7ef;text-decoration:none;white-space:nowrap;">RHAISTRAT-2701</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Build, evaluate, automate</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Three capabilities reach GA.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">The tools teams build AI applications with leave Tech Preview, and each one now ends in something that runs.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-ai-chat-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">GA</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Gen AI Studio.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">The playground and the APIs behind it are supported for production.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1939" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1939</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-automation-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">GA</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">AutoRAG.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Finds the best retrieval pattern for your documents automatically.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2678" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2678</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-trend-up-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">GA</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">AutoML.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Trains and compares models on tabular and time-series data.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2694" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2694</a></p>
+      
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">From an experiment to a running RAG app.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">AutoRAG now goes all the way: connect your data, let it try retrieval patterns with models served through MaaS, compare them, and deploy the winner as a running application — or as a starter kit to customise. It reads more of the world too: scanned documents, audio and graph-based retrieval.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2646" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2646</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2440" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2440</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1860" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1860</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./journey-2.png" width="528" alt="AutoRAG end to end: connect data, run experiments with MaaS models, compare patterns, deploy the best one as a RAG app (new in 3.6)." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-template-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Playground to API.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">A tested playground configuration deploys as a callable API service.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1914" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1914</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-collection-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Chat with documents.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Attach documents to a playground chat and ask about them.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2551" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2551</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-assessment-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Evaluations in the catalog.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">EvalHub benchmarks appear on the model card, where models are chosen.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1858" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1858</a></p>
+      
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-star-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">An Eval Gallery.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Curated benchmark suites to start from, next to your own.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2356" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2356</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-in-progress-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Jobs you can follow.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Live progress, failure diagnostics and help reading the scores.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1569" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1569</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1570" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1570</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1634" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1634</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-migrate-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Bigger data for AutoML.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Tables over 1 GB and time series, without sampling them down first.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2408" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2408</a><span style="color:#a3a3a3;">&nbsp;&nbsp;· </span><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2357" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2357</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Data and workbenches</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">Screens instead of YAML.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">Data access and the notebook experience got their own first-class screens.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-data-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">New module</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Data Connect Hub.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">List, add and remove data connections from one page.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2504" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2504</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-registry-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Data Registry API.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Register and discover data assets through one API.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2381" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2381</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-settings-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Feature Store, guided.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Deploy and inspect feature store instances from a form.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1814" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1814</a></p>
+      
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-develop-and-train-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">Dev Preview</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Workbenches 2.0.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Kubeflow Notebooks 2.0 downstream, deployed by its own module operator.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1681" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1681</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-process-automation-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      <p style="margin:0 0 12px 0;"><span style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;display:inline-block;font-size:12px;line-height:18px;font-weight:600;color:#004d99;background:#e0f0ff;border-radius:999px;padding:2px 10px;">Tech Preview</span></p>
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">KALE.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Turn a notebook into a pipeline, even disconnected, with example notebooks to start from.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1848" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1848</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Underneath</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">A platform every team ships on.</h2><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:12px auto 0 auto;font-size:16px;line-height:25px;color:#4d4d4d;text-align:center;">All of this runs on one modular platform. In 3.6 it got easier for teams to own their part of it, and safer to change.</p></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Every team owns its operator.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The RHOAI operator became a platform orchestrator: component teams now ship their own module operators against a shared contract for status, conventions and upgrades. Workbenches 2.0 is the first to arrive this way.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1064" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1064</a></p>
+      <div style="height:20px;line-height:20px;font-size:0;">&nbsp;</div><img src="./fan-out-2.png" width="528" alt="The RHOAI platform orchestrator delegates to module operators owned by each team: the dashboard operator, the workbenches operator (new) and other component operators." style="display:block;border:0;outline:none;width:100%;max-width:528px;height:auto;">
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:12px;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-lock-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Ready for OpenShift 5.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Every component follows the cluster TLS profile — a release gate for OpenShift 5.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-1716" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-1716</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-speedometer-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Lighter on large clusters.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">The dashboard operator caches only what it manages, so memory stays flat as clusters grow.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-98541" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHOAIENG-98541</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="148" style="background:#f5f5f5;border-radius:16px;padding:20px 18px 18px 18px;width:148px;">
+      <img src="./chip-robot-40.png" width="32" height="32" alt="" style="display:block;border:0;outline:none;width:100%;max-width:32px;height:auto;"><div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:19px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">An agent on every PR.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:13px;line-height:20px;color:#4d4d4d;text-align:left;">Fullsend reviews each dashboard pull request with CodeRabbit; a person decides.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-98886" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHOAIENG-98886</a></p>
+      
+    </td>
+  </tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>
+    <td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-check-circle-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Tested before it merges.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Every dashboard operator change passes envtest, platform-contract conformance and a real-cluster install before it can merge.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHOAIENG-83682" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHOAIENG-83682</a></p>
+      
+    </td><td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td><td bgcolor="#f5f5f5" valign="top" width="234" style="background:#f5f5f5;border-radius:18px;padding:26px 24px 24px 24px;width:234px;">
+      <img src="./chip-migrate-40.png" width="40" height="40" alt="" style="display:block;border:0;outline:none;width:100%;max-width:40px;height:auto;"><div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:left;">Upgrades, validated.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">A nightly 3.5 → 3.6 upgrade matrix runs across components, so an upgrade surprise is caught by the teams, not by customers.</p>
+      
+      <p style="margin:12px 0 0 0;line-height:16px;"><a href="https://redhat.atlassian.net/browse/RHAISTRAT-2210" style="font-family:'Red Hat Mono','RedHatMono',Menlo,Consolas,monospace;font-size:11px;color:#707070;text-decoration:none;white-space:nowrap;">RHAISTRAT-2210</a></p>
+      
+    </td>
+  </tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 44px;"><p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:600;color:#0066cc;text-align:center;">Coming in 3.7</p><h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:30px;line-height:35px;font-weight:600;letter-spacing:-0.2px;color:#151515;text-align:center;">What comes next.</h2></td></tr><tr><td style="font-size:0;line-height:0;height:28px;">&nbsp;</td></tr>
+<tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:14px 0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">MCP Catalog and Registry, GA</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The governed MCP path from 3.6 becomes fully supported.</p>
+    </td></tr><tr><td style="padding:14px 0;border-top:1px solid #e0e0e0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">AI Grid</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Models-as-a-Service grows into multi-cluster inference: one front door across sites, tenant organizations in the MaaS Portal and a console for the provider.</p>
+    </td></tr><tr><td style="padding:14px 0;border-top:1px solid #e0e0e0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">YAML editor, GA</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Edit any model deployment as YAML, in sync with the form.</p>
+    </td></tr><tr><td style="padding:14px 0;border-top:1px solid #e0e0e0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">Gen AI Studio on the AI Gateway</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">The playground on the AI Gateway as an alternative backend.</p>
+    </td></tr><tr><td style="padding:14px 0;border-top:1px solid #e0e0e0;">
+      <p style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:16px;line-height:22px;font-weight:600;color:#151515;">EvalHub reports</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:3px 0 0 0;font-size:14px;line-height:22px;color:#4d4d4d;text-align:left;">Evaluation reports you can read and share from the dashboard.</p>
+    </td></tr></table></td></tr>
+<tr><td style="font-size:0;line-height:0;height:64px;">&nbsp;</td></tr><tr><td style="padding:0 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr><td bgcolor="#003366" valign="top" style="background:#003366;border-radius:18px;padding:26px 24px 24px 24px;">
+      
+      
+      
+      <h2 style="font-family:'Red Hat Display','RedHatDisplay',Helvetica,Arial,sans-serif;margin:0;font-size:22px;line-height:26px;font-weight:600;letter-spacing:-0.2px;color:#ffffff;text-align:left;">One product, end to end.</h2>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:8px 0 0 0;font-size:14px;line-height:22px;color:#d2e5f7;text-align:left;">Everything in this issue ships in RHOAI 3.6. Thank you to everyone who built it, and to the model serving, MaaS, AI platform, QE and security teams who shipped it with us.</p>
+      <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:14px 0 0 0;font-size:14px;line-height:20px;"><a href="https://lucferbux.github.io/Dashboard-Newsletter-Hub/dashboard/" style="color:#ffffff;text-decoration:none;">Explore the product: OpenShift AI, MaaS, xKS and AI Grid&nbsp;&rsaquo;</a></p>
+      
+      
+    </td></tr></table></td></tr><tr><td style="font-size:0;line-height:0;height:40px;">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:24px 32px 8px 32px;">
+    <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0 0 10px 0;font-size:12px;line-height:18px;"><a href="https://lucferbux.github.io/Dashboard-Newsletter-Hub/dashboard/" style="color:#4d4d4d;text-decoration:none;">Product site</a><span style="color:#a3a3a3;">&nbsp;&nbsp;·&nbsp;&nbsp;</span><a href="https://github.com/opendatahub-io/odh-dashboard" style="color:#4d4d4d;text-decoration:none;">odh-dashboard</a></p>
+    <p style="font-family:'Red Hat Text','RedHatText',Helvetica,Arial,sans-serif;margin:0;font-size:12px;line-height:18px;color:#707070;">RHOAI Dashboard · Red Hat OpenShift AI · source: Jira, RHOAI 3.6 EA1–GA</p>
+  </td></tr>
+</table>
+</center>
+</td></tr></table>
+</body>
+</html>

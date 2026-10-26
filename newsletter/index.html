@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletters — RHOAI Dashboard</title>
+<link rel="icon" href="../dashboard/assets/rhoai-favicon.svg">
+<link rel="stylesheet" href="../dashboard/vendor/patternfly/patternfly-no-globals.css">
+<style>
+  html { background: #f2f2f2; } body { margin: 0; min-height: 100vh; background: #f2f2f2; color: #151515; font: 16px/1.5 'Red Hat Text', sans-serif; -webkit-font-smoothing: antialiased; }
+  header { background: #fff; border-bottom: 1px solid #c7c7c7; }
+  .bar { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; gap: 28px; }
+  .bar img { height: 36px; } .bar nav { display: flex; gap: 22px; margin-left: auto; } .bar a { color: #0066cc; text-decoration: none; font-size: 15px; }
+  main { max-width: 1120px; margin: 0 auto; padding: 64px 24px 96px; }
+  h1 { font: 700 clamp(36px, 5vw, 56px)/1.05 'Red Hat Display', sans-serif; letter-spacing: -.03em; margin: 0; }
+  .lead { color: #4d4d4d; font-size: 20px; margin: 14px 0 44px; max-width: 60ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .card { display: flex; flex-direction: column; background: #fff; border-radius: 20px; overflow: hidden; color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.04); transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(0,0,0,.3); }
+  .card img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; background: #e0e0e0; display: block; }
+  .body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+  .eyebrow { color: #ee0000; font: 600 13px 'Red Hat Display', sans-serif; }
+  h2 { font: 700 21px/1.25 'Red Hat Display', sans-serif; margin: 6px 0 8px; letter-spacing: -.01em; }
+  p { color: #4d4d4d; font-size: 15px; margin: 0; }
+  .more { margin-top: auto; padding-top: 16px; color: #0066cc; font-weight: 500; }
+</style></head>
+<body>
+<header><div class="bar"><img src="../dashboard/assets/rhoai-logo.svg" alt="Red Hat OpenShift AI"><nav><a href="https://lucferbux.github.io/Dashboard-Newsletter-Hub/dashboard/">Product site</a><a href="https://lucferbux.github.io/Dashboard-Newsletter-Hub/">Platform</a></nav></div></header>
+<main><h1>Release newsletters</h1><p class="lead">What the RHOAI Dashboard teams shipped in each release, as sent by email.</p>
+<div class="grid"><a class="card" href="rhoai-3.6-dashboard/">
+      <img src="rhoai-3.6-dashboard/hero.png" alt="" loading="lazy">
+      <div class="body"><span class="eyebrow">RHOAI 3.6 · RHOAI Dashboard</span><h2>RHOAI 3.6: from &quot;which model?&quot; to a running AI application</h2><p>One product, one story: find models and MCP servers, deploy them with one wizard, share them through MaaS, build in Gen AI Studio, evaluate with EvalHub and automate with AutoML and AutoRAG — three of them now GA.</p><span class="more">Read the newsletter ›</span></div></a>
+<a class="card" href="rhoai-3.6-platform/">
+      <img src="rhoai-3.6-platform/hero.png" alt="" loading="lazy">
+      <div class="body"><span class="eyebrow">RHOAI 3.6 · Dashboard Platform</span><h2>RHOAI 3.6: ready for production, built to stay that way</h2><p>A portal for model consumers, an operator that proves every change, OpenShift 5 readiness — and an engineering system where an agent reviews every pull request and vulnerabilities stop before they merge.</p><span class="more">Read the newsletter ›</span></div></a>
+<a class="card" href="rhoai-3.6/">
+      <img src="rhoai-3.6/hero.png" alt="" loading="lazy">
+      <div class="body"><span class="eyebrow">RHOAI 3.6 · Dashboard Platform</span><h2>RHOAI 3.6: ready for production</h2><p>A portal for model consumers, the first community plugins, a dashboard ready for OpenShift 5, an operator that tests every change before it ships, and 14 feature modules on one platform.</p><span class="more">Read the newsletter ›</span></div></a></div></main>
+</body></html>

@@ -62,6 +62,12 @@ $('#sidebar').innerHTML = html`<div class="pf-v6-c-page__sidebar-main"><div clas
         ${sections.filter((s) => s.nav.group === g).map((s) => html`<li class="pf-v6-c-nav__item"><a href="#${s.id}" class="pf-v6-c-nav__link" data-nav="${s.id}">
           <span class="pf-v6-c-nav__link-icon">${icon(s.nav.icon)}</span><span class="pf-v6-c-nav__link-text">${s.nav.label}</span></a></li>`)}
       </ul></section>`)}
+    <section class="pf-v6-c-nav__section" aria-labelledby="nav-hub">
+      <h2 class="pf-v6-c-nav__section-title" id="nav-hub">Hub</h2>
+      <ul class="pf-v6-c-nav__list" role="list">
+        <li class="pf-v6-c-nav__item"><a href="dashboard/" class="pf-v6-c-nav__link"><span class="pf-v6-c-nav__link-icon">${icon('ai-experience')}</span><span class="pf-v6-c-nav__link-text">Product site</span></a></li>
+        <li class="pf-v6-c-nav__item"><a href="newsletter/" class="pf-v6-c-nav__link"><span class="pf-v6-c-nav__link-icon">${icon('collection')}</span><span class="pf-v6-c-nav__link-text">Newsletters</span></a></li>
+      </ul></section>
   </nav></div></div>`;
 
 const sidebar = $('#sidebar');
